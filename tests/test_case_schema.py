@@ -148,8 +148,10 @@ class TestRepoCasesAreValid:
     """仓库里现有的用例文件必须能通过校验"""
 
     @pytest.mark.parametrize("rel_path", [
+        "cases/account_create.json",
         "cases/contact_create.json",
-        "fixtures/replay/cases.json",
+        "fixtures/replay/demo/cases.json",
+        "fixtures/replay/real_sanitized/cases.json",
     ])
     def test_shipped_cases_validate(self, rel_path):
         with open(os.path.join(REPO_ROOT, rel_path), encoding="utf-8") as f:
