@@ -1,0 +1,223 @@
+[
+  {
+    "id": "GEN_ACCOUNT_S1",
+    "name": "正常录入联系人",
+    "type": "single",
+    "metadata": {
+      "scenario": "S1",
+      "priority": "P0",
+      "difficulty": "easy",
+      "tags": [
+        "account",
+        "field_extraction",
+        "contact",
+        "normal_flow"
+      ]
+    },
+    "turns": [
+      {
+        "turn_id": "T01",
+        "input": "帮我录入一个联系人，姓名是王芳，公司是杭州云启科技有限公司，手机号13812345678，部门是采购部，联系人角色是决策人。",
+        "expected": {
+          "text_assertions": {
+            "all": [
+              "王芳",
+              "杭州云启科技有限公司"
+            ],
+            "any": [
+              "确认",
+              "是否创建",
+              "创建成功",
+              "已创建"
+            ],
+            "not_any": [],
+            "iany": []
+          },
+          "state_assertion": {
+            "fields": {
+              "accountName": "王芳",
+              "remark": "公司：杭州云启科技有限公司；手机号：13812345678；部门：采购部；联系人角色：决策人"
+            },
+            "absent": []
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "expected_skills": [
+        "extract-data"
+      ],
+      "tools_required": [
+        "save_record"
+      ],
+      "tools_forbidden": [],
+      "object_type": "account",
+      "business_success": true,
+      "fields": {
+        "accountName": "王芳",
+        "remark": "公司：杭州云启科技有限公司；手机号：13812345678；部门：采购部；联系人角色：决策人"
+      },
+      "field_constraints": {
+        "accountName": "present",
+        "remark": "present"
+      }
+    }
+  },
+  {
+    "id": "GEN_ACCOUNT_S2",
+    "name": "缺少联系人姓名不得创建",
+    "type": "single",
+    "metadata": {
+      "scenario": "S2",
+      "priority": "P0",
+      "difficulty": "medium",
+      "tags": [
+        "account",
+        "required_field_validation",
+        "negative_case",
+        "contact"
+      ]
+    },
+    "turns": [
+      {
+        "turn_id": "T01",
+        "input": "帮我录入一个联系人，公司是上海启辰信息技术有限公司，手机号13900001111，部门是技术部。",
+        "expected": {
+          "text_assertions": {
+            "all": [],
+            "any": [
+              "姓名",
+              "联系人姓名",
+              "必填"
+            ],
+            "not_any": [
+              "创建成功",
+              "已创建",
+              "保存成功"
+            ],
+            "iany": []
+          },
+          "state_assertion": {
+            "fields": {},
+            "absent": [
+              "accountName"
+            ]
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "expected_skills": [
+        "extract-data"
+      ],
+      "tools_required": [],
+      "tools_forbidden": [
+        "save_record"
+      ],
+      "object_type": "account",
+      "business_success": false,
+      "fields": {},
+      "field_constraints": {
+        "accountName": "absent"
+      }
+    }
+  },
+  {
+    "id": "GEN_ACCOUNT_S3",
+    "name": "修改手机号后使用最新值",
+    "type": "multi_turn",
+    "metadata": {
+      "scenario": "S3",
+      "priority": "P0",
+      "difficulty": "medium",
+      "tags": [
+        "account",
+        "multi_turn",
+        "latest_value",
+        "phone_update"
+      ]
+    },
+    "turns": [
+      {
+        "turn_id": "T01",
+        "input": "帮我录入一个联系人，姓名是陈志强，公司是北京远航咨询有限公司，手机号13700002222，部门是市场部。",
+        "expected": {
+          "text_assertions": {
+            "all": [
+              "陈志强",
+              "北京远航咨询有限公司"
+            ],
+            "any": [
+              "确认",
+              "是否创建",
+              "13700002222"
+            ],
+            "not_any": [
+              "创建成功",
+              "已创建",
+              "保存成功"
+            ],
+            "iany": []
+          },
+          "state_assertion": {
+            "fields": {
+              "accountName": "陈志强",
+              "remark": "公司：北京远航咨询有限公司；手机号：13700002222；部门：市场部"
+            },
+            "absent": []
+          }
+        }
+      },
+      {
+        "turn_id": "T02",
+        "input": "手机号改成13511113333，然后确认创建。",
+        "expected": {
+          "text_assertions": {
+            "all": [
+              "13511113333"
+            ],
+            "any": [
+              "创建成功",
+              "已创建",
+              "保存成功",
+              "确认创建"
+            ],
+            "not_any": [
+              "13700002222"
+            ],
+            "iany": []
+          },
+          "state_assertion": {
+            "fields": {
+              "accountName": "陈志强",
+              "remark": "公司：北京远航咨询有限公司；手机号：13511113333；部门：市场部"
+            },
+            "absent": []
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "expected_skills": [
+        "extract-data"
+      ],
+      "tools_required": [
+        "save_record"
+      ],
+      "tools_forbidden": [],
+      "object_type": "account",
+      "business_success": true,
+      "fields": {
+        "accountName": "陈志强",
+        "remark": "公司：北京远航咨询有限公司；手机号：13511113333；部门：市场部"
+      },
+      "field_constraints": {
+        "accountName": "present",
+        "remark": "present"
+      }
+    }
+  }
+]

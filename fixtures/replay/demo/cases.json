@@ -1,0 +1,93 @@
+[
+  {
+    "id": "DEMO_PASS",
+    "name": "回放示例：录入联系人全链路通过",
+    "metadata": {
+      "scenario": "standard_create",
+      "priority": "P0",
+      "difficulty": "easy",
+      "tags": ["field_extraction", "confirmation_flow", "positive_case"]
+    },
+    "type": "confirmation",
+    "turns": [
+      {
+        "turn_id": "T01",
+        "input": "帮我创建联系人测试联系人A，测试客户A的测试部门A测试职位A，男，手机号13800000001，邮箱user01@example.test",
+        "expected": {
+          "text_assertions": {
+            "all": ["测试联系人A"],
+            "any": ["确认", "创建", "信息"]
+          },
+          "state_assertion": {
+            "fields": {
+              "contactName": "测试联系人A",
+              "depart": "测试部门A",
+              "post": "测试职位A"
+            },
+            "absent": ["phone"]
+          }
+        }
+      },
+      {
+        "turn_id": "T02",
+        "input": "确认创建",
+        "expected": {
+          "text_assertions": {
+            "any": ["创建成功", "已创建", "完成"]
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "tools_required": ["save_record"],
+      "object_type": "contact",
+      "business_success": true,
+      "fields": {
+        "contactName": "测试联系人A",
+        "gender": "男",
+        "mobile": "13800000001",
+        "email": "user01@example.test",
+        "depart": "测试部门A",
+        "post": "测试职位A"
+      },
+      "field_constraints": {
+        "phone": "absent",
+        "contactName": "present"
+      }
+    }
+  },
+  {
+    "id": "DEMO_ROUTING_FAIL",
+    "name": "回放示例：Skill 路由错误（用于验证门禁能拦住退化）",
+    "metadata": {
+      "scenario": "skill_routing_error",
+      "priority": "P0",
+      "difficulty": "easy",
+      "tags": ["negative_case", "intent_switch"]
+    },
+    "type": "single",
+    "turns": [
+      {
+        "turn_id": "T01",
+        "input": "帮我创建联系人测试联系人A，测试客户A的测试部门A测试职位A",
+        "expected": {
+          "text_assertions": {
+            "all": ["测试联系人A"]
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "tools_required": ["save_record"],
+      "object_type": "contact",
+      "business_success": true,
+      "fields": {
+        "contactName": "测试联系人A",
+        "depart": "测试部门A",
+        "post": "测试职位A"
+      }
+    }
+  }
+]

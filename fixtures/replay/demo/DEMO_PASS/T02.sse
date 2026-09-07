@@ -1,0 +1,17 @@
+event: RUN_STARTED
+data: {"type":"RUN_STARTED","run_id":"22222222-2222-4222-8222-222222222222","thread_id":"workbench-1000000000001-demo01","trace_url":"/demo/traces/demo-trace-0002","current_message_id":1000000000000002,"clientSource":"unknown"}
+
+event: ACTIVITY_SNAPSHOT
+data: {"type":"ACTIVITY_SNAPSHOT","messageId":"demo-thinking-0002","activityType":"a2ui-surface","content":{"operations":[{"surfaceUpdate":{"surfaceId":"thinking-step","components":[{"id":"thinking-step","component":{"ThinkingExecutionProcess":{"status":"complete","msg":"智能录入 执行完成","processKey":"step-demo-0002","skillName":"extract-data","skillKey":"extract-data","toolCount":2,"totalDurationMs":12310,"match_method":"semantic","exec_mode":"fork","children":{"explicitList":["tool-1","tool-2"]}}}},{"id":"tool-1","component":{"ThinkingExecutionProcessTool":{"status":"complete","msg":"智能录入 调用完成","toolName":"extract-data","toolLabel":"智能录入","toolRunId":"skill-extract-data-demo-0002","executionType":"skill","durationMs":12305}}},{"id":"tool-2","component":{"ThinkingExecutionProcessTool":{"status":"complete","msg":"保存记录 调用完成","toolName":"save_record","toolLabel":"保存记录","toolRunId":"tool-save-record-demo-0002","executionType":"tool","durationMs":2610}}}]}},{"beginRendering":{"surfaceId":"thinking-step","root":"thinking-step"}}]}}
+
+event: ACTIVITY_SNAPSHOT
+data: {"type":"ACTIVITY_SNAPSHOT","messageId":"demo-biz-0002","activityType":"a2ui-surface","content":{"operations":[{"surfaceUpdate":{"surfaceId":"chat-inline","components":[{"id":"fallback-data","component":{"FallbackDataViewer":{"messageId":"demo-biz-0002","dataKey":"extract_form_data","data":{"task_id":"ext-demo-0001","object_apikey":"contact","entity_type_apikey":"defaultBusiType","isCreated":true,"created_record_id":1000000000001001,"isCheckin":0,"entityInfo":{"apikey":"contact","label":"联系人"},"extracted":[{"apikey":"contactName","name":"名称","label":"测试联系人A","value":"测试联系人A","type":"text"},{"apikey":"gender","name":"性别","label":"男","value":"1","type":"text"},{"apikey":"mobile","name":"手机","label":"13800000001","value":"13800000001","type":"text"},{"apikey":"email","name":"邮箱","label":"user01@example.test","value":"user01@example.test","type":"text"},{"apikey":"depart","name":"部门","label":"测试部门A","value":"测试部门A","type":"text"},{"apikey":"post","name":"职位","label":"测试职位A","value":"测试职位A","type":"text"}],"message":"创建成功"}}}}]}},{"beginRendering":{"surfaceId":"chat-inline","root":"fallback-data"}}]}}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type":"TEXT_MESSAGE_CONTENT","message_id":"demo-msg-0002","delta":"联系人测试联系人A已创建成功"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type":"TEXT_MESSAGE_CONTENT","message_id":"demo-msg-0002","delta":"，记录 ID 1000000000001001。"}
+
+event: RUN_FINISHED
+data: {"type":"RUN_FINISHED","run_id":"22222222-2222-4222-8222-222222222222","thread_id":"workbench-1000000000001-demo01","message_cost_credits":26.85}

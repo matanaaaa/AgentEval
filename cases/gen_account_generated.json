@@ -1,0 +1,167 @@
+[
+  {
+    "id": "GEN_ACCOUNT_S1",
+    "name": "正常录入客户",
+    "type": "confirmation",
+    "metadata": {
+      "scenario": "S1",
+      "priority": "P0",
+      "difficulty": "easy",
+      "tags": ["account", "field_extraction", "create"]
+    },
+    "turns": [
+      {
+        "turn_id": "T01",
+        "input": "帮我录入一个客户，客户名称是杭州云启科技有限公司，客户类型为供应商。",
+        "expected": {
+          "text_assertions": {
+            "all": ["杭州云启科技有限公司"],
+            "any": ["供应商", "确认", "创建"],
+            "not_any": [],
+            "iany": []
+          },
+          "state_assertion": {
+            "fields": {
+              "accountName": "杭州云启科技有限公司",
+              "entityType": "供应商"
+            },
+            "absent": []
+          }
+        }
+      },
+      {
+        "turn_id": "T02",
+        "input": "确认创建",
+        "expected": {
+          "text_assertions": {
+            "any": ["创建成功", "已创建", "完成"]
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "expected_skills": ["extract-data"],
+      "tools_required": ["save_record"],
+      "tools_forbidden": [],
+      "object_type": "account",
+      "business_success": true,
+      "fields": {
+        "accountName": "杭州云启科技有限公司",
+        "entityType": "供应商"
+      },
+      "field_constraints": {
+        "accountName": "present",
+        "entityType": "present"
+      }
+    }
+  },
+  {
+    "id": "GEN_ACCOUNT_S2",
+    "name": "缺少客户名称",
+    "type": "single",
+    "metadata": {
+      "scenario": "S2",
+      "priority": "P0",
+      "difficulty": "medium",
+      "tags": ["account", "required_field", "negative_case", "validation"]
+    },
+    "turns": [
+      {
+        "turn_id": "T01",
+        "input": "帮我创建一个客户，客户类型是默认业务类型，但是客户名称我还没想好。",
+        "expected": {
+          "text_assertions": {
+            "all": [],
+            "any": ["客户名称", "名称", "补充", "必填", "提供"],
+            "not_any": ["创建成功", "已创建", "保存成功"],
+            "iany": []
+          },
+          "state_assertion": {
+            "fields": {},
+            "absent": ["accountName"]
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "",
+      "expected_skills": [],
+      "tools_required": [],
+      "tools_forbidden": ["save_record"],
+      "object_type": "account",
+      "business_success": false,
+      "fields": {},
+      "field_constraints": {
+        "accountName": "absent"
+      }
+    }
+  },
+  {
+    "id": "GEN_ACCOUNT_S3",
+    "name": "同轮多次修改客户类型",
+    "type": "confirmation",
+    "metadata": {
+      "scenario": "S3",
+      "priority": "P0",
+      "difficulty": "medium",
+      "tags": ["account", "field_correction", "confirmation_flow", "entityType"]
+    },
+    "turns": [
+      {
+        "turn_id": "T01",
+        "input": "录入一个客户，客户名称叫苏州恒远贸易有限公司，客户类型先按默认业务类型，不对，改成供应商，还是按供应商来。",
+        "expected": {
+          "text_assertions": {
+            "all": ["苏州恒远贸易有限公司"],
+            "any": ["供应商", "确认", "工商"],
+            "not_any": ["默认业务类型"],
+            "iany": []
+          },
+          "state_assertion": {
+            "fields": {
+              "accountName": "苏州恒远贸易有限公司",
+              "entityType": "供应商"
+            },
+            "absent": []
+          }
+        }
+      },
+      {
+        "turn_id": "T02",
+        "input": "确认创建。",
+        "expected": {
+          "text_assertions": {
+            "all": [],
+            "any": ["创建成功", "已创建", "保存成功"],
+            "not_any": [],
+            "iany": []
+          },
+          "state_assertion": {
+            "fields": {
+              "accountName": "苏州恒远贸易有限公司",
+              "entityType": "供应商"
+            },
+            "absent": []
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "expected_skills": ["extract-data"],
+      "tools_required": ["save_record"],
+      "tools_forbidden": [],
+      "object_type": "account",
+      "business_success": true,
+      "fields": {
+        "accountName": "苏州恒远贸易有限公司",
+        "entityType": "供应商"
+      },
+      "field_constraints": {
+        "accountName": "present",
+        "entityType": "present"
+      }
+    }
+  }
+]

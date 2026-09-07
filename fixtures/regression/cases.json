@@ -1,0 +1,54 @@
+[
+  {
+    "id": "CREATEACCOUNT038",
+    "name": "录入客户：从活动记录切换到客户",
+    "metadata": {
+      "scenario": "intent_switch_inline",
+      "priority": "P1",
+      "difficulty": "hard",
+      "tags": [
+        "account",
+        "intent_switch",
+        "field_extraction"
+      ],
+      "regression": true,
+      "source": "live_badcase",
+      "issue_type": "agent"
+    },
+    "type": "single",
+    "turns": [
+      {
+        "turn_id": "T01",
+        "input": "我想录入一个活动记录，不，还没有客户，先录入一个客户，叫<ACCOUNTNAME_1>，类型是供应商",
+        "expected": {
+          "text_assertions": {
+            "all": [
+              "<ACCOUNTNAME_1>"
+            ],
+            "any": [
+              "供应商",
+              "匹配到多个",
+              "选择",
+              "确认"
+            ]
+          },
+          "state_assertion": {
+            "fields": {
+              "accountName": "<ACCOUNTNAME_1>",
+              "entityType": "供应商"
+            }
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "object_type": "account",
+      "business_success": "pending",
+      "fields": {
+        "accountName": "<ACCOUNTNAME_1>",
+        "entityType": "供应商"
+      }
+    }
+  }
+]

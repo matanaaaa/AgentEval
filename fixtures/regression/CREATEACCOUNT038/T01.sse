@@ -1,0 +1,383 @@
+event: RUN_STARTED
+data: {"type": "RUN_STARTED", "run_id": "<RUN_ID_1>", "thread_id": "<THREAD_ID_1>", "conversation_id": "<CONVERSATION_ID_1>", "trace_url": "/cmc1bgrl40005s50849d8l27m/traces/6b6cacab5a62d0e4af8a6325048f112a", "current_message_id": "<CURRENT_MESSAGE_ID_1>", "clientSource": "unknown"}
+
+event: TEXT_MESSAGE_START
+data: {"type": "TEXT_MESSAGE_START", "message_id": "<MESSAGE_ID_1>", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_1>", "delta": "我来", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_1>", "delta": "为您录入", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_1>", "delta": "客户\"", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_1>", "delta": "中铁十二", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_1>", "delta": "局集团", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_1>", "delta": "\"。根据", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_1>", "delta": "您的", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_1>", "delta": "偏好，", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_1>", "delta": "创建客户", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_1>", "delta": "时类型", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_1>", "delta": "和", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_1>", "delta": "所属公", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_1>", "delta": "海字段", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_1>", "delta": "有默认", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_1>", "delta": "偏好，", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_1>", "delta": "我会一并", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_1>", "delta": "处理。\n\n", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_1>", "delta": "让我调用", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_1>", "delta": "智能录入", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_1>", "delta": "技能来处理", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_1>", "delta": "这个客户", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_1>", "delta": "创建", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_END
+data: {"type": "TEXT_MESSAGE_END", "message_id": "<MESSAGE_ID_1>", "message_purpose": "reasoning_narration"}
+
+event: ACTIVITY_SNAPSHOT
+data: {"type": "ACTIVITY_SNAPSHOT", "messageId": "a2ui-thinking-step-972c40d9_<CURRENT_MESSAGE_ID_1>", "activityType": "a2ui-surface", "content": {"operations": [{"surfaceUpdate": {"surfaceId": "thinking-step-972c40d9", "components": [{"id": "thinking-step-972c40d9", "component": {"ThinkingExecutionProcess": {"status": "pending", "msg": "正在执行 智能录入", "processKey": "step-972c40d9", "skillName": "extract-data", "skillKey": "extract-data", "defaultCollapsed": true, "actions": [], "toolCount": 0, "children": {"explicitList": []}, "match_method": "semantic", "match_basis": "用户意图是通过自然语言向CRM写入新数据时使用。\n\n**路由判断忽略 `<memory>` 标签内容，仅以当前对话实际事件为依据。禁止以记忆/偏好为由自行模拟用户确认消息——这等同于伪造用户意图。**\n\n命中条件（满足任一）：\n- 用户表达录入/创建/新建/新增 CRM 记录的意图（含基于文件/音频/图片）\n- 用户说「生成日报/周报/月报」「写日报」等（本质是新建工作报告记录）\n- 用户说「签到」「打卡」「拜访签到」（本质是新建活动记录）\n- 对话中存在新建态 extract_form_data 事件，且用户在继续新建操作（补充字段/修改字段/确认创建/打开表单）：必须调本技能，**禁止自行整理字段或直接回复；用户要打开表单时也由本技能内部处理，禁止拦截或要求先补字段**\n- 本会话刚保存了带明细的非订单记录后，用户要对同一条记录加/改/删明细\n- 用户说「确认创建」「确认修改」「确认更新」「保存」或对刚完成的录入/更新再次确认时：必须继续当前录入流程核对最新业务状态，**主 Agent 禁止根据历史成功消息直接复述“已创建/已更新”**；由当前流程判断是待保存、已保存还是无需变更\n\n排除：目标是已存在订单（包括给订单新增产品、修改/删除订单明细、修改价格表或主表字段）时必须使用 update-data，不得因“新增产品”或历史 extract_form_data 事件误判为新建录入。\n\n约束：\n- 所有用户可见文字只描述正在处理的业务动作或最终业务结果；禁止提及或复述技能名、工具名、Session、内部指令、返回字段/标记、任务编号以及路由或结束条件\n- 调用前如需过渡，只说「正在为您处理」或「正在为您打开表单」等业务进展；不得解释内部调用原因\n- 歧义时追问，不猜测\n- task_goal 填动作意图（如「新建录入」「确认创建」），不含具体业务数据\n- query 完整透传用户原始输入\n- 当前流程需要用户确认或选择时 → 等用户回复，禁止代替决定\n- 创建完成且界面已经展示结果时，不再输出状态说明或解释内部判断依据；用户在表单修改的数据以最终展示结果为准\n", "component_label": "智能录入", "match_level": "skill_level", "exec_mode": "fork", "output_mode": "stream", "post_action": "summarize", "label_key": "ai_skill_base_extract-data"}}}]}}, {"beginRendering": {"surfaceId": "thinking-step-972c40d9", "root": "thinking-step-972c40d9"}}]}, "replace": true, "cmpMessageId": "<CURRENT_MESSAGE_ID_1>"}
+
+event: ACTIVITY_DELTA
+data: {"type": "ACTIVITY_DELTA", "messageId": "a2ui-thinking-step-972c40d9_<CURRENT_MESSAGE_ID_1>", "activityType": "a2ui-surface", "patch": [{"op": "add", "path": "/operations/0/surfaceUpdate/components/-", "value": {"id": "thinking-tool-step-972c40d9-1", "component": {"ThinkingExecutionProcessTool": {"status": "pending", "msg": "正在调用 智能录入", "toolName": "extract-data", "toolLabel": "智能录入", "toolRunId": "skill-extract-data-6625a2f2", "executionType": "skill", "skillApiKey": "extract-data", "agentApiKey": "extract-data", "subTaskTraceId": "default-extract-data-09f32b00", "parentRunId": "default", "toolLabelKey": "ai_skill_base_extract-data"}}}}, {"op": "add", "path": "/operations/0/surfaceUpdate/components/0/component/ThinkingExecutionProcess/children/explicitList/-", "value": "thinking-tool-step-972c40d9-1"}, {"op": "replace", "path": "/operations/0/surfaceUpdate/components/0/component/ThinkingExecutionProcess/toolCount", "value": 1}], "cmpMessageId": "<CURRENT_MESSAGE_ID_1>"}
+
+event: ACTIVITY_DELTA
+data: {"type": "ACTIVITY_DELTA", "messageId": "a2ui-thinking-step-972c40d9_<CURRENT_MESSAGE_ID_1>", "activityType": "a2ui-surface", "patch": [{"op": "add", "path": "/operations/0/surfaceUpdate/components/-", "value": {"id": "thinking-tool-step-972c40d9-2", "component": {"ThinkingExecutionProcessTool": {"status": "pending", "msg": "正在调用 识别实体", "toolName": "resolve_entity", "toolLabel": "识别实体", "toolRunId": "01a06b9d-c1b7-7053-b6b6-ce9d0c9991bf", "executionType": "tool", "toolLabelKey": "XdMDNeoAgentV2.tool.resolve_entity.label"}}}}, {"op": "add", "path": "/operations/0/surfaceUpdate/components/0/component/ThinkingExecutionProcess/children/explicitList/-", "value": "thinking-tool-step-972c40d9-2"}, {"op": "replace", "path": "/operations/0/surfaceUpdate/components/0/component/ThinkingExecutionProcess/toolCount", "value": 2}], "cmpMessageId": "<CURRENT_MESSAGE_ID_1>"}
+
+event: ACTIVITY_DELTA
+data: {"type": "ACTIVITY_DELTA", "messageId": "a2ui-thinking-step-972c40d9_<CURRENT_MESSAGE_ID_1>", "activityType": "a2ui-surface", "patch": [{"op": "replace", "path": "/operations/0/surfaceUpdate/components/2", "value": {"id": "thinking-tool-step-972c40d9-2", "component": {"ThinkingExecutionProcessTool": {"status": "complete", "msg": "识别实体 调用完成", "toolName": "resolve_entity", "toolLabel": "识别实体", "toolRunId": "01a06b9d-c1b7-7053-b6b6-ce9d0c9991bf", "executionType": "tool", "durationMs": 5024, "slow": false, "toolLabelKey": "XdMDNeoAgentV2.tool.resolve_entity.label", "retried": false}}}}], "cmpMessageId": "<CURRENT_MESSAGE_ID_1>"}
+
+event: ACTIVITY_DELTA
+data: {"type": "ACTIVITY_DELTA", "messageId": "a2ui-thinking-step-972c40d9_<CURRENT_MESSAGE_ID_1>", "activityType": "a2ui-surface", "patch": [{"op": "add", "path": "/operations/0/surfaceUpdate/components/-", "value": {"id": "thinking-tool-step-972c40d9-3", "component": {"ThinkingExecutionProcessTool": {"status": "pending", "msg": "正在调用 获取字段", "toolName": "get_field_schema", "toolLabel": "获取字段", "toolRunId": "01a06b9d-d556-7373-b321-a62e85bd7cac", "executionType": "tool", "toolLabelKey": "XdMDNeoAgentV2.tool.get_field_schema.label"}}}}, {"op": "add", "path": "/operations/0/surfaceUpdate/components/0/component/ThinkingExecutionProcess/children/explicitList/-", "value": "thinking-tool-step-972c40d9-3"}, {"op": "replace", "path": "/operations/0/surfaceUpdate/components/0/component/ThinkingExecutionProcess/toolCount", "value": 3}], "cmpMessageId": "<CURRENT_MESSAGE_ID_1>"}
+
+event: ACTIVITY_DELTA
+data: {"type": "ACTIVITY_DELTA", "messageId": "a2ui-thinking-step-972c40d9_<CURRENT_MESSAGE_ID_1>", "activityType": "a2ui-surface", "patch": [{"op": "replace", "path": "/operations/0/surfaceUpdate/components/3", "value": {"id": "thinking-tool-step-972c40d9-3", "component": {"ThinkingExecutionProcessTool": {"status": "complete", "msg": "获取字段 调用完成", "toolName": "get_field_schema", "toolLabel": "获取字段", "toolRunId": "01a06b9d-d556-7373-b321-a62e85bd7cac", "executionType": "tool", "durationMs": 7189, "slow": false, "toolLabelKey": "XdMDNeoAgentV2.tool.get_field_schema.label", "retried": false}}}}], "cmpMessageId": "<CURRENT_MESSAGE_ID_1>"}
+
+event: ACTIVITY_DELTA
+data: {"type": "ACTIVITY_DELTA", "messageId": "a2ui-thinking-step-972c40d9_<CURRENT_MESSAGE_ID_1>", "activityType": "a2ui-surface", "patch": [{"op": "add", "path": "/operations/0/surfaceUpdate/components/-", "value": {"id": "thinking-tool-step-972c40d9-4", "component": {"ThinkingExecutionProcessTool": {"status": "pending", "msg": "正在调用 校验录入", "toolName": "validate_extract", "toolLabel": "校验录入", "toolRunId": "01a06b9d-f16a-70d1-8d04-43e47ce3f236", "executionType": "tool", "toolLabelKey": "XdMDNeoAgentV2.tool.validate_extract.label"}}}}, {"op": "add", "path": "/operations/0/surfaceUpdate/components/0/component/ThinkingExecutionProcess/children/explicitList/-", "value": "thinking-tool-step-972c40d9-4"}, {"op": "replace", "path": "/operations/0/surfaceUpdate/components/0/component/ThinkingExecutionProcess/toolCount", "value": 4}], "cmpMessageId": "<CURRENT_MESSAGE_ID_1>"}
+
+event: ACTIVITY_SNAPSHOT
+data: {"type": "ACTIVITY_SNAPSHOT", "messageId": "a2ui-<CURRENT_MESSAGE_ID_1>-<RUN_ID_1>-1", "activityType": "a2ui-surface", "content": {"operations": [{"surfaceUpdate": {"surfaceId": "chat-inline-<RUN_ID_1>-0", "components": [{"id": "fallback-extract_form_data-<RUN_ID_1>", "component": {"FallbackDataViewer": {"messageId": "a2ui-<CURRENT_MESSAGE_ID_1>-<RUN_ID_1>-1", "dataKey": "extract_form_data", "data": {"card_instance_id": "283b0186972540af91886cc2b3127e39", "__msg_created_at": 1788511912202, "task_id": "<TASK_ID_1>", "object_apikey": "account", "entity_type_apikey": "businessType13__c", "isCreated": false, "mode": "create", "isUpdated": false, "record_id": null, "diff_data": null, "all_fields_valid": false, "round_count": 1, "interrupt": false, "entityInfo": {"apikey": "account", "label": "客户", "labelKey": "XdMDObj.account"}, "extracted": [{"apikey": "accountName", "name": "客户名称", "nameKey": "XdMDItm.account.accountName", "label": "<ACCOUNTNAME_1>", "labelKey": null, "value": "<ACCOUNTNAME_1>", "type": "text", "isObject": false, "extData": {}}, {"apikey": "territoryHighSeaId", "name": "所属区域公海", "nameKey": "XdMDItm.account.territoryHighSeaId", "label": "默认公海分组", "labelKey": null, "value": 4034892470263240, "type": "relation", "isObject": true, "extData": {"label": "默认公海分组", "value": 4034892470263240, "apiKey": null, "labelKey": null}}, {"apikey": "entityType", "name": "客户类型", "nameKey": "XdMDItm.account.entityType", "label": "供应商", "labelKey": null, "value": 4484760740683234, "type": "relation", "isObject": true, "extData": {"label": "供应商", "value": 4484760740683234, "apiKey": "businessType13__c", "labelKey": null}}], "required": [], "modified": [], "systemErrors": ["数据重复"], "warningErrors": ["客户名称基于工商信息匹配到多个企业，请选择使用：1、<ACCOUNTNAME_2>陕西第一分公司。2、<ACCOUNTNAME_2>高明西制梁场。3、<ACCOUNTNAME_1>滁州建筑工程有限公司。4、<ACCOUNTNAME_1>电气化工程有限公司。5、<ACCOUNTNAME_1>第一工程有限公司永济装备科技分公司。"], "pending_required": [], "detail_fields": [], "pickerFilterData": null, "fileFields": {}, "cmpVariant": "normal"}}}}]}}, {"beginRendering": {"surfaceId": "chat-inline-<RUN_ID_1>-0", "root": "fallback-extract_form_data-<RUN_ID_1>"}}]}, "replace": false, "cmpMessageId": "<CURRENT_MESSAGE_ID_1>"}
+
+event: ACTIVITY_DELTA
+data: {"type": "ACTIVITY_DELTA", "messageId": "a2ui-thinking-step-972c40d9_<CURRENT_MESSAGE_ID_1>", "activityType": "a2ui-surface", "patch": [{"op": "replace", "path": "/operations/0/surfaceUpdate/components/4", "value": {"id": "thinking-tool-step-972c40d9-4", "component": {"ThinkingExecutionProcessTool": {"status": "complete", "msg": "校验录入 调用完成", "toolName": "validate_extract", "toolLabel": "校验录入", "toolRunId": "01a06b9d-f16a-70d1-8d04-43e47ce3f236", "executionType": "tool", "durationMs": 7630, "slow": false, "toolLabelKey": "XdMDNeoAgentV2.tool.validate_extract.label", "retried": false}}}}], "cmpMessageId": "<CURRENT_MESSAGE_ID_1>"}
+
+event: ACTIVITY_DELTA
+data: {"type": "ACTIVITY_DELTA", "messageId": "a2ui-thinking-step-972c40d9_<CURRENT_MESSAGE_ID_1>", "activityType": "a2ui-surface", "patch": [{"op": "add", "path": "/operations/0/surfaceUpdate/components/-", "value": {"id": "thinking-tool-step-972c40d9-5", "component": {"ThinkingExecutionProcessTool": {"status": "pending", "msg": "正在调用 校验录入", "toolName": "validate_extract", "toolLabel": "校验录入", "toolRunId": "01a06b9e-0f3a-76a3-83ed-1876e6abc378", "executionType": "tool", "toolLabelKey": "XdMDNeoAgentV2.tool.validate_extract.label"}}}}, {"op": "add", "path": "/operations/0/surfaceUpdate/components/0/component/ThinkingExecutionProcess/children/explicitList/-", "value": "thinking-tool-step-972c40d9-5"}, {"op": "replace", "path": "/operations/0/surfaceUpdate/components/0/component/ThinkingExecutionProcess/toolCount", "value": 5}], "cmpMessageId": "<CURRENT_MESSAGE_ID_1>"}
+
+event: ACTIVITY_SNAPSHOT
+data: {"type": "ACTIVITY_SNAPSHOT", "messageId": "a2ui-<CURRENT_MESSAGE_ID_1>-<RUN_ID_1>-2", "activityType": "a2ui-surface", "content": {"operations": [{"surfaceUpdate": {"surfaceId": "chat-inline-<RUN_ID_1>-1", "components": [{"id": "fallback-extract_form_data-<RUN_ID_1>", "component": {"FallbackDataViewer": {"messageId": "a2ui-<CURRENT_MESSAGE_ID_1>-<RUN_ID_1>-2", "dataKey": "extract_form_data", "data": {"card_instance_id": "e24d963d846548879bf3a123425ef153", "__msg_created_at": 1788511919446, "task_id": "<TASK_ID_1>", "object_apikey": "account", "entity_type_apikey": "businessType13__c", "isCreated": false, "mode": "create", "isUpdated": false, "record_id": null, "diff_data": null, "all_fields_valid": true, "round_count": 2, "interrupt": false, "entityInfo": {"apikey": "account", "label": "客户", "labelKey": "XdMDObj.account"}, "extracted": [{"apikey": "accountName", "name": "客户名称", "nameKey": "XdMDItm.account.accountName", "label": "<ACCOUNTNAME_2>", "labelKey": null, "value": "<ACCOUNTNAME_2>", "type": "text", "isObject": false, "extData": {}}, {"apikey": "territoryHighSeaId", "name": "所属区域公海", "nameKey": "XdMDItm.account.territoryHighSeaId", "label": "默认公海分组", "labelKey": null, "value": 4034892470263240, "type": "relation", "isObject": true, "extData": {"label": "默认公海分组", "value": 4034892470263240, "apiKey": null, "labelKey": null}}, {"apikey": "entityType", "name": "客户类型", "nameKey": "XdMDItm.account.entityType", "label": "供应商", "labelKey": null, "value": 4484760740683234, "type": "relation", "isObject": true, "extData": {"label": "供应商", "value": 4484760740683234, "apiKey": "businessType13__c", "labelKey": null}}], "required": [], "modified": [], "systemErrors": [], "warningErrors": [], "pending_required": [], "detail_fields": [], "pickerFilterData": null, "fileFields": {}, "cmpVariant": "normal"}}}}]}}, {"beginRendering": {"surfaceId": "chat-inline-<RUN_ID_1>-1", "root": "fallback-extract_form_data-<RUN_ID_1>"}}]}, "replace": false, "cmpMessageId": "<CURRENT_MESSAGE_ID_1>"}
+
+event: ACTIVITY_DELTA
+data: {"type": "ACTIVITY_DELTA", "messageId": "a2ui-thinking-step-972c40d9_<CURRENT_MESSAGE_ID_1>", "activityType": "a2ui-surface", "patch": [{"op": "replace", "path": "/operations/0/surfaceUpdate/components/5", "value": {"id": "thinking-tool-step-972c40d9-5", "component": {"ThinkingExecutionProcessTool": {"status": "complete", "msg": "校验录入 调用完成", "toolName": "validate_extract", "toolLabel": "校验录入", "toolRunId": "01a06b9e-0f3a-76a3-83ed-1876e6abc378", "executionType": "tool", "durationMs": 6755, "slow": false, "toolLabelKey": "XdMDNeoAgentV2.tool.validate_extract.label", "retried": false}}}}], "cmpMessageId": "<CURRENT_MESSAGE_ID_1>"}
+
+event: ACTIVITY_DELTA
+data: {"type": "ACTIVITY_DELTA", "messageId": "a2ui-thinking-step-972c40d9_<CURRENT_MESSAGE_ID_1>", "activityType": "a2ui-surface", "patch": [{"op": "replace", "path": "/operations/0/surfaceUpdate/components/1", "value": {"id": "thinking-tool-step-972c40d9-1", "component": {"ThinkingExecutionProcessTool": {"status": "complete", "msg": "智能录入 调用完成", "toolName": "extract-data", "toolLabel": "智能录入", "toolRunId": "skill-extract-data-6625a2f2", "executionType": "skill", "durationMs": 30436, "slow": true, "skillApiKey": "extract-data", "agentApiKey": "extract-data", "subTaskTraceId": "default-extract-data-09f32b00", "parentRunId": "default", "toolLabelKey": "ai_skill_base_extract-data", "retried": false}}}}], "cmpMessageId": "<CURRENT_MESSAGE_ID_1>"}
+
+event: ACTIVITY_SNAPSHOT
+data: {"type": "ACTIVITY_SNAPSHOT", "messageId": "a2ui-thinking-step-972c40d9_<CURRENT_MESSAGE_ID_1>", "activityType": "a2ui-surface", "content": {"operations": [{"surfaceUpdate": {"surfaceId": "thinking-step-972c40d9", "components": [{"id": "thinking-step-972c40d9", "component": {"ThinkingExecutionProcess": {"status": "complete", "msg": "智能录入 执行完成", "processKey": "step-972c40d9", "skillName": "extract-data", "skillKey": "extract-data", "defaultCollapsed": true, "actions": [], "toolCount": 5, "totalDurationMs": 30442, "children": {"explicitList": ["thinking-tool-step-972c40d9-1", "thinking-tool-step-972c40d9-2", "thinking-tool-step-972c40d9-3", "thinking-tool-step-972c40d9-4", "thinking-tool-step-972c40d9-5"]}}}}, {"id": "thinking-tool-step-972c40d9-1", "component": {"ThinkingExecutionProcessTool": {"status": "complete", "msg": "智能录入 调用完成", "toolName": "extract-data", "toolLabel": "智能录入", "toolRunId": "skill-extract-data-6625a2f2", "executionType": "skill", "durationMs": 30436, "slow": true, "skillApiKey": "extract-data", "agentApiKey": "extract-data", "subTaskTraceId": "default-extract-data-09f32b00", "parentRunId": "default", "toolLabelKey": "ai_skill_base_extract-data", "retried": false}}}, {"id": "thinking-tool-step-972c40d9-2", "component": {"ThinkingExecutionProcessTool": {"status": "complete", "msg": "识别实体 调用完成", "toolName": "resolve_entity", "toolLabel": "识别实体", "toolRunId": "01a06b9d-c1b7-7053-b6b6-ce9d0c9991bf", "executionType": "tool", "durationMs": 5024, "slow": false, "toolLabelKey": "XdMDNeoAgentV2.tool.resolve_entity.label", "retried": false}}}, {"id": "thinking-tool-step-972c40d9-3", "component": {"ThinkingExecutionProcessTool": {"status": "complete", "msg": "获取字段 调用完成", "toolName": "get_field_schema", "toolLabel": "获取字段", "toolRunId": "01a06b9d-d556-7373-b321-a62e85bd7cac", "executionType": "tool", "durationMs": 7189, "slow": false, "toolLabelKey": "XdMDNeoAgentV2.tool.get_field_schema.label", "retried": false}}}, {"id": "thinking-tool-step-972c40d9-4", "component": {"ThinkingExecutionProcessTool": {"status": "complete", "msg": "校验录入 调用完成", "toolName": "validate_extract", "toolLabel": "校验录入", "toolRunId": "01a06b9d-f16a-70d1-8d04-43e47ce3f236", "executionType": "tool", "durationMs": 7630, "slow": false, "toolLabelKey": "XdMDNeoAgentV2.tool.validate_extract.label", "retried": false}}}, {"id": "thinking-tool-step-972c40d9-5", "component": {"ThinkingExecutionProcessTool": {"status": "complete", "msg": "校验录入 调用完成", "toolName": "validate_extract", "toolLabel": "校验录入", "toolRunId": "01a06b9e-0f3a-76a3-83ed-1876e6abc378", "executionType": "tool", "durationMs": 6755, "slow": false, "toolLabelKey": "XdMDNeoAgentV2.tool.validate_extract.label", "retried": false}}}]}}, {"beginRendering": {"surfaceId": "thinking-step-972c40d9", "root": "thinking-step-972c40d9"}}]}, "replace": true, "cmpMessageId": "<CURRENT_MESSAGE_ID_1>"}
+
+event: TEXT_MESSAGE_START
+data: {"type": "TEXT_MESSAGE_START", "message_id": "<MESSAGE_ID_2>", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "正在", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "为您处理", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "客户录入", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "。\n\n系统", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "在录入", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "时发现", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "\"", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "中铁十二", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "局集团", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "\"这个", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "名称基于", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "工商信息", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "匹配到了", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "多个企业", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "，需要", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "您确认", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "具体是哪", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "一家。", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "同时系统", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "也提示", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "可能存在重复", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "数据。\n\n", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "请您确认", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "要录入", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "的客户", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "全", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "称，", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "以下为", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "系统", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "匹配到的", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "候选企业", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "：\n\n1", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": ".", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": " **中铁", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "十二局", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "集团有限公司陕西", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "第一分公司", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "**\n2", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": ".", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": " **中铁", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "十二局", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "集团有限公司高明", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "西制", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "梁场", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "**\n", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "3.", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": " **中铁", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "十二局", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "集团", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "滁州", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "建筑工程有限公司", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "**\n4", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": ". **", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "中铁十二", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "局集团", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "电气化", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "工程有限公司", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "**\n5", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": ". **", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "中铁十二", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "局集团", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "第一工程", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "有限公司永", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "济装备", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "科技分公司", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "**\n\n另外", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "，系统", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "也提示", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "\"数据", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "重复", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "\"，可能", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "系统中已", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "存在同名", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "或", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "相似客户", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "。\n\n请问", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "您希望", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "录入哪一个", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "企业？", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "或者您", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "可以直接告诉我", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "准确的客户", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "全称", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "，", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "我来为您", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "<MESSAGE_ID_2>", "delta": "处理。", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_END
+data: {"type": "TEXT_MESSAGE_END", "message_id": "<MESSAGE_ID_2>", "message_purpose": "reasoning_narration"}
+
+event: RUN_FINISHED
+data: {"type": "RUN_FINISHED", "run_id": "<RUN_ID_1>", "thread_id": "<THREAD_ID_1>", "conversation_id": "<CONVERSATION_ID_1>", "cost_credits": null, "message_cost_credits": 20.5974, "message_cost_credits_at": 1788511926343}

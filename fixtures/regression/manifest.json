@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "case_id": "CREATEACCOUNT038",
+      "source_report": "report_account038-badcase_20260907_143356.json",
+      "root_cause": "多候选客户匹配场景下，Agent 未等待用户确认候选，擅自将用户输入的客户名称改写为候选企业全称，存在代替用户决策的问题。",
+      "issue_type": "agent",
+      "status": "known",
+      "blocking": false,
+      "expected_exit_code": 1,
+      "live_regression_required": true,
+      "promoted_at": "2026-09-07T06:39:10.550230+00:00",
+      "trace_files": [
+        "T01.sse"
+      ],
+      "sanitization": {
+        "automatic_redactions": 9,
+        "manual_redactions": 0,
+        "residual_scan_passed": true
+      },
+      "root_cause_confirmed": true
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+[
+  {
+    "id": "GEN_CONTACT_S1",
+    "name": "录入联系人：缺少姓名时不得创建",
+    "type": "single",
+    "metadata": {
+      "scenario": "S1",
+      "priority": "P0",
+      "difficulty": "easy",
+      "tags": [
+        "contact",
+        "required_field_validation",
+        "negative_case"
+      ]
+    },
+    "turns": [
+      {
+        "turn_id": "T01",
+        "input": "帮我录入一个联系人，公司是星辰科技有限公司，手机号是13800138000，部门是采购部",
+        "expected": {
+          "text_assertions": {
+            "all": [],
+            "any": [
+              "姓名",
+              "联系人姓名",
+              "补充姓名",
+              "缺少姓名",
+              "必填"
+            ],
+            "not_any": [
+              "创建成功",
+              "已创建",
+              "保存成功"
+            ],
+            "iany": []
+          },
+          "state_assertion": {
+            "fields": {},
+            "absent": [
+              "contactName"
+            ]
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "expected_skills": [
+        "extract-data"
+      ],
+      "tools_required": [],
+      "tools_forbidden": [
+        "save_record"
+      ],
+      "object_type": "contact",
+      "business_success": false,
+      "fields": {},
+      "field_constraints": {
+        "contactName": "absent"
+      }
+    }
+  }
+]

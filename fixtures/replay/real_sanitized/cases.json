@@ -1,0 +1,204 @@
+[
+  {
+    "id": "CREATEACCOUNT027",
+    "name": "录入客户：电话字段改写、非法格式与清空",
+    "metadata": {
+      "scenario": "phone_update_and_clear",
+      "priority": "P1",
+      "difficulty": "hard",
+      "tags": ["account", "multi_turn", "field_update", "field_delete"]
+    },
+    "type": "multi_turn",
+    "turns": [
+      {
+        "turn_id": "C01T01",
+        "input": "新建客户，叫示例财富管理股份有限公司,电话13800000002",
+        "expected": {
+          "text_assertions": {
+            "all": ["示例财富管理股份有限公司"],
+            "any": ["电话", "13800000002"]
+          }
+        }
+      },
+      {
+        "turn_id": "C01T02",
+        "input": "电话改成abc123",
+        "expected": {
+          "text_assertions": {
+            "any": ["格式", "不正确", "无效", "不合法", "有误"]
+          }
+        }
+      },
+      {
+        "turn_id": "C01T03",
+        "input": "电话先不填了，去掉",
+        "expected": {
+          "text_assertions": {
+            "any": ["已清空", "已删除", "已去掉", "已移除", "电话"]
+          },
+          "state_assertion": {
+            "fields": {
+              "accountName": "示例财富管理股份有限公司"
+            },
+            "absent": ["phone"]
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "object_type": "account",
+      "business_success": "pending",
+      "field_constraints": {
+        "accountName": "present",
+        "phone": "absent"
+      }
+    }
+  },
+  {
+    "id": "CREATECONTACT003",
+    "name": "录入联系人：正常内容-反向描述01",
+    "metadata": {
+      "scenario": "standard_create",
+      "priority": "P0",
+      "difficulty": "easy",
+      "tags": ["field_extraction", "confirmation_flow", "reverse_description"]
+    },
+    "type": "confirmation",
+    "turns": [
+      {
+        "turn_id": "T01",
+        "input": "张伟经理，示例建工集团市场部，女，手机13800000001，邮箱zhangwei@example.com，办公电话80000001，默认业务类型，角色是审批者，帮我创建这个联系人",
+        "expected": {
+          "text_assertions": {
+            "all": ["张伟"],
+            "any": ["确认", "创建", "信息"]
+          }
+        }
+      },
+      {
+        "turn_id": "T02",
+        "input": "确认创建",
+        "expected": {
+          "text_assertions": {
+            "any": ["创建成功", "已创建", "完成"]
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "tools_required": ["save_record"],
+      "object_type": "contact",
+      "business_success": true,
+      "fields": {
+        "contactName": "张伟",
+        "gender": "女",
+        "mobile": "13800000001",
+        "email": "zhangwei@example.com",
+        "phone": "80000001",
+        "depart": "市场部",
+        "post": "经理",
+        "contactRole": "审批者",
+        "entityType": "默认业务类型"
+      }
+    }
+  },
+  {
+    "id": "CREATECONTACT004",
+    "name": "录入联系人：缺必填字段-应阻止创建",
+    "metadata": {
+      "scenario": "missing_required_field",
+      "priority": "P0",
+      "difficulty": "medium",
+      "tags": ["field_extraction", "negative_case", "missing_field"]
+    },
+    "type": "single",
+    "turns": [
+      {
+        "turn_id": "T01",
+        "input": "研发部总监，女士，手机是13800000001，邮箱是zhangwei@example.com，默认业务类型，是示例建工集团这个公司的联系人，创建",
+        "expected": {
+          "text_assertions": {
+            "any": ["联系人", "姓名", "请填写", "请提供", "请补充", "必填"]
+          },
+          "state_assertion": {
+            "absent": ["contactName"]
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "tools_forbidden": ["save_record"],
+      "object_type": "contact",
+      "business_success": false,
+      "field_constraints": {
+        "contactName": "absent"
+      }
+    }
+  },
+  {
+    "id": "CREATECONTACT009",
+    "name": "录入联系人：多轮-意图切换(客户→联系人)",
+    "metadata": {
+      "scenario": "intent_switch_customer_to_contact",
+      "priority": "P1",
+      "difficulty": "hard",
+      "tags": ["multi_turn", "intent_switch", "context_memory"]
+    },
+    "type": "multi_turn",
+    "turns": [
+      {
+        "turn_id": "C01T01",
+        "input": "查询客户示例建工集团",
+        "expected": {
+          "text_assertions": {
+            "all": ["示例建工集团"],
+            "any": ["已存在", "客户", "查询"]
+          }
+        }
+      },
+      {
+        "turn_id": "C01T02",
+        "input": "不查询客户了，帮我创建默认业务类型的联系人李娜小姐，是示例建工集团的联系人",
+        "expected": {
+          "text_assertions": {
+            "all": ["李娜", "示例建工集团"]
+          }
+        }
+      },
+      {
+        "turn_id": "C01T03",
+        "input": "她是采购部经理",
+        "expected": {
+          "text_assertions": {
+            "all": ["李娜", "采购部"]
+          }
+        }
+      },
+      {
+        "turn_id": "C01T04",
+        "input": "确认创建",
+        "expected": {
+          "text_assertions": {
+            "any": ["创建成功", "已创建", "完成"]
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "expected_skills": ["crm_query", "extract-data"],
+      "tools_required": ["save_record"],
+      "object_type": "contact",
+      "business_success": true,
+      "fields": {
+        "contactName": "李娜",
+        "gender": "女",
+        "post": "采购部经理",
+        "entityType": "默认业务类型"
+      }
+    }
+  }
+]

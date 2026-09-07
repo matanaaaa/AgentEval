@@ -1,0 +1,14 @@
+event: RUN_STARTED
+data: {"type":"RUN_STARTED","run_id":"demo-run-0003","thread_id":"demo-thread-0002","trace_url":"/demo/traces/demo-trace-0003","current_message_id":10003,"clientSource":"unknown"}
+
+event: ACTIVITY_SNAPSHOT
+data: {"type":"ACTIVITY_SNAPSHOT","messageId":"demo-thinking-0003","activityType":"a2ui-surface","content":{"operations":[{"surfaceUpdate":{"surfaceId":"thinking-step","components":[{"id":"thinking-step","component":{"ThinkingExecutionProcess":{"status":"complete","msg":"CRM 查询 执行完成","processKey":"step-demo-0003","skillName":"crm_query","skillKey":"crm-query","toolCount":1,"totalDurationMs":20480,"match_method":"semantic","exec_mode":"fork","children":{"explicitList":["tool-1"]}}}},{"id":"tool-1","component":{"ThinkingExecutionProcessTool":{"status":"complete","msg":"技能 调用完成","toolName":"skills_tool","toolLabel":"技能","toolRunId":"tool-run-demo-0003","executionType":"skill","durationMs":20476,"slow":"slow"}}}]}},{"beginRendering":{"surfaceId":"thinking-step","root":"thinking-step"}}]}}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type":"TEXT_MESSAGE_CONTENT","message_id":"demo-msg-0003","delta":"为您找到 7 条与“测试客户A”相关的客户记录"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type":"TEXT_MESSAGE_CONTENT","message_id":"demo-msg-0003","delta":"，需要我做什么？"}
+
+event: RUN_FINISHED
+data: {"type":"RUN_FINISHED","run_id":"demo-run-0003","thread_id":"demo-thread-0002","message_cost_credits":18.2}

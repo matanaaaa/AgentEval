@@ -1,0 +1,493 @@
+[
+  {
+    "id": "CREATEACCOUNT001",
+    "name": "录入客户：标准信息抽取与确认创建",
+    "metadata": {
+      "scenario": "extract_and_confirm_create",
+      "priority": "P0",
+      "difficulty": "medium",
+      "tags": ["account", "field_extraction", "confirmation_flow"]
+    },
+    "type": "confirmation",
+    "turns": [
+      {
+        "turn_id": "T01",
+        "input": "我想录入一个客户，客户名称叫中铁十二局集团有限公司陕西第一分公司，客户类型为默认业务类型，所属公海默认设为默认公海分组",
+        "expected": {
+          "text_assertions": {
+            "all": ["中铁十二局集团有限公司陕西第一分公司"],
+            "any": ["默认业务类型", "工商", "选择", "匹配到多个", "确认"]
+          },
+          "state_assertion": {
+            "fields": {
+              "accountName": "中铁十二局集团有限公司陕西第一分公司",
+              "entityType": "默认业务类型"
+            }
+          }
+        }
+      },
+      {
+        "turn_id": "T02",
+        "input": "确认创建",
+        "expected": {
+          "text_assertions": {
+            "any": ["创建成功", "已创建", "完成", "数据重复", "已存在"]
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "tools_required": ["save_record"],
+      "object_type": "account",
+      "business_success": true,
+      "fields": {
+        "accountName": "中铁十二局集团有限公司陕西第一分公司",
+        "entityType": "默认业务类型"
+      }
+    }
+  },
+  {
+    "id": "CREATEACCOUNT009",
+    "name": "录入客户：中英文混合表达",
+    "metadata": {
+      "scenario": "mixed_language",
+      "priority": "P1",
+      "difficulty": "medium",
+      "tags": ["account", "field_extraction", "mixed_language", "confirmation_flow"]
+    },
+    "type": "confirmation",
+    "turns": [
+      {
+        "turn_id": "T01",
+        "input": "加一个account，四川宜成医用设备有限公司，类型企业客户",
+        "expected": {
+          "text_assertions": {
+            "all": ["四川宜成医用设备有限公司"],
+            "any": ["企业客户", "客户类型", "确认"]
+          },
+          "state_assertion": {
+            "fields": {
+              "accountName": "四川宜成医用设备有限公司",
+              "entityType": "企业客户"
+            }
+          }
+        }
+      },
+      {
+        "turn_id": "T02",
+        "input": "确认创建",
+        "expected": {
+          "text_assertions": {
+            "any": ["创建成功", "已创建", "完成", "数据重复", "已存在"]
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "tools_required": ["save_record"],
+      "object_type": "account",
+      "business_success": true,
+      "fields": {
+        "accountName": "四川宜成医用设备有限公司",
+        "entityType": "企业客户"
+      }
+    }
+  },
+  {
+    "id": "CREATEACCOUNT010",
+    "name": "录入客户：缺少必填客户名称",
+    "metadata": {
+      "scenario": "missing_required_field",
+      "priority": "P0",
+      "difficulty": "easy",
+      "tags": ["account", "negative_case", "missing_field"]
+    },
+    "type": "single",
+    "turns": [
+      {
+        "turn_id": "T01",
+        "input": "新加一个account，默认业务类型",
+        "expected": {
+          "text_assertions": {
+            "any": ["客户名称", "名称", "叫什么", "请填写", "请提供", "请补充", "待填写", "必填", "补充"]
+          },
+          "state_assertion": {
+            "absent": ["accountName"]
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "tools_forbidden": ["save_record"],
+      "object_type": "account",
+      "business_success": false,
+      "field_constraints": {
+        "accountName": "absent"
+      }
+    }
+  },
+  {
+    "id": "CREATEACCOUNT014",
+    "name": "录入客户：单轮纠正客户类型",
+    "metadata": {
+      "scenario": "field_update_inline",
+      "priority": "P0",
+      "difficulty": "medium",
+      "tags": ["account", "field_update", "self_correction"]
+    },
+    "type": "single",
+    "turns": [
+      {
+        "turn_id": "T01",
+        "input": "新建客户，叫四川语言桥信息技术有限公司，客户类型为默认业务类型，不对，是供应商类型",
+        "expected": {
+          "text_assertions": {
+            "all": ["四川语言桥"],
+            "any": ["供应商", "确认创建", "已录入", "已就绪"]
+          },
+          "state_assertion": {
+            "fields": {
+              "accountName": "四川语言桥信息技术有限公司",
+              "entityType": "供应商"
+            }
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "object_type": "account",
+      "business_success": "pending",
+      "fields": {
+        "accountName": "四川语言桥信息技术有限公司",
+        "entityType": "供应商"
+      }
+    }
+  },
+  {
+    "id": "CREATEACCOUNT016",
+    "name": "录入客户：删除已录入的客户级别",
+    "metadata": {
+      "scenario": "field_delete_inline",
+      "priority": "P0",
+      "difficulty": "medium",
+      "tags": ["account", "field_delete", "state_assertion"]
+    },
+    "type": "single",
+    "turns": [
+      {
+        "turn_id": "T01",
+        "input": "新建供应商类型的客户，叫四川语言桥信息技术有限公司，客户级别是c，啊不对，我再确认下级别，先空着",
+        "expected": {
+          "text_assertions": {
+            "all": ["四川语言桥信息技术有限公司"],
+            "any": [ "供应商", "客户级别", "待确认"]
+          },
+          "state_assertion": {
+            "fields": {
+              "accountName": "四川语言桥信息技术有限公司",
+              "entityType": "供应商"
+            },
+            "absent": ["customerLevel"]
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "object_type": "account",
+      "business_success": "pending",
+      "fields": {
+        "accountName": "四川语言桥信息技术有限公司",
+        "entityType": "供应商"
+      },
+      "field_constraints": {
+        "customerLevel": "absent"
+      }
+    }
+  },
+  {
+    "id": "CREATEACCOUNT018",
+    "name": "录入客户：无关内容打断后恢复上下文",
+    "metadata": {
+      "scenario": "context_recovery_after_noise",
+      "priority": "P1",
+      "difficulty": "hard",
+      "tags": ["account", "multi_turn", "context_memory", "noise"]
+    },
+    "type": "multi_turn",
+    "turns": [
+      {
+        "turn_id": "C01T01",
+        "input": "录入一个客户，叫潍坊中云机器有限公司",
+        "expected": {
+          "text_assertions": {
+            "all": ["潍坊中云机器有限公司"]
+          },
+          "state_assertion": {
+            "fields": {
+              "accountName": "潍坊中云机器有限公司"
+            }
+          }
+        }
+      },
+      {
+        "turn_id": "C01T02",
+        "input": "我想吃蒸羊羔、蒸熊掌、蒸鹿尾儿、烧花鸭、烧雏鸡、烧子鹅",
+        "expected": {}
+      },
+      {
+        "turn_id": "C01T03",
+        "input": "客户类型是默认业务类型",
+        "expected": {
+          "text_assertions": {
+            "all": ["潍坊中云机器有限公司", "默认业务类型"]
+          },
+          "state_assertion": {
+            "fields": {
+              "accountName": "潍坊中云机器有限公司",
+              "entityType": "默认业务类型"
+            }
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "object_type": "account",
+      "business_success": "pending",
+      "fields": {
+        "accountName": "潍坊中云机器有限公司",
+        "entityType": "默认业务类型"
+      }
+    }
+  },
+  {
+    "id": "CREATEACCOUNT020",
+    "name": "录入客户：取消后重新开始",
+    "metadata": {
+      "scenario": "cancel_and_restart",
+      "priority": "P0",
+      "difficulty": "hard",
+      "tags": ["account", "multi_turn", "cancel", "context_reset"]
+    },
+    "type": "multi_turn",
+    "turns": [
+      {
+        "turn_id": "C01T01",
+        "input": "新建一个客户叫好买财富，默认业务类型",
+        "expected": {
+          "text_assertions": {
+            "all": ["好买财富"],
+            "any": ["默认业务类型", "确认"]
+          }
+        }
+      },
+      {
+        "turn_id": "C01T02",
+        "input": "不对，先不创建了",
+        "expected": {
+          "text_assertions": {
+            "any": ["取消", "不创建", "不录入", "好的"]
+          }
+        }
+      },
+      {
+        "turn_id": "C01T03",
+        "input": "新建供应商类型客户，嗯，叫潍坊中云机器有限公司",
+        "expected": {
+          "text_assertions": {
+            "all": ["潍坊中云机器有限公司", "供应商"]
+          },
+          "state_assertion": {
+            "fields": {
+              "accountName": "潍坊中云机器有限公司",
+              "entityType": "供应商"
+            }
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "object_type": "account",
+      "business_success": "pending",
+      "fields": {
+        "accountName": "潍坊中云机器有限公司",
+        "entityType": "供应商"
+      }
+    }
+  },
+  {
+    "id": "CREATEACCOUNT027",
+    "name": "录入客户：电话字段改写、非法格式与清空",
+    "metadata": {
+      "scenario": "phone_update_and_clear",
+      "priority": "P1",
+      "difficulty": "hard",
+      "tags": ["account", "multi_turn", "field_update", "field_delete"]
+    },
+    "type": "multi_turn",
+    "turns": [
+      {
+        "turn_id": "C01T01",
+        "input": "新建客户，叫好买财富管理股份有限公司,电话15901627483",
+        "expected": {
+          "text_assertions": {
+            "all": ["好买财富管理股份有限公司"],
+            "any": ["电话", "15901627483"]
+          }
+        }
+      },
+      {
+        "turn_id": "C01T02",
+        "input": "电话改成abc123",
+        "expected": {
+          "text_assertions": {
+            "any": ["格式", "不正确", "无效", "不合法", "有误"]
+          }
+        }
+      },
+      {
+        "turn_id": "C01T03",
+        "input": "电话先不填了，去掉",
+        "expected": {
+          "text_assertions": {
+            "any": ["已清空", "已删除", "已去掉", "已移除", "电话"]
+          },
+          "state_assertion": {
+            "fields": {
+              "accountName": "好买财富管理股份有限公司"
+            },
+            "absent": ["phone"]
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "object_type": "account",
+      "business_success": "pending",
+      "field_constraints": {
+        "accountName": "present",
+        "phone": "absent"
+      }
+    }
+  },
+  {
+    "id": "CREATEACCOUNT038",
+    "name": "录入客户：从活动记录切换到客户",
+    "metadata": {
+      "scenario": "intent_switch_inline",
+      "priority": "P1",
+      "difficulty": "hard",
+      "tags": ["account", "intent_switch", "field_extraction"]
+    },
+    "type": "single",
+    "turns": [
+      {
+        "turn_id": "T01",
+        "input": "我想录入一个活动记录，不，还没有客户，先录入一个客户，叫中铁十二局集团，类型是供应商",
+        "expected": {
+          "text_assertions": {
+            "all": ["中铁十二局集团"],
+            "any": ["供应商", "匹配到多个", "选择", "确认"]
+          },
+          "state_assertion": {
+            "fields": {
+              "accountName": "中铁十二局集团",
+              "entityType": "供应商"
+            }
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "object_type": "account",
+      "business_success": "pending",
+      "fields": {
+        "accountName": "中铁十二局集团",
+        "entityType": "供应商"
+      }
+    }
+  },
+  {
+    "id": "CREATEACCOUNT047",
+    "name": "录入客户：先查询 CRM 再录入",
+    "metadata": {
+      "scenario": "query_then_create",
+      "priority": "P1",
+      "difficulty": "hard",
+      "tags": ["account", "multi_turn", "cross_skill", "crm_query"]
+    },
+    "type": "multi_turn",
+    "turns": [
+      {
+        "turn_id": "C01T01",
+        "input": "查系统里客户名称是基蛋生物科技股份有限公司的客户信息",
+        "expected": {
+          "text_assertions": {
+            "all": ["基蛋生物科技股份有限公司"]
+          }
+        }
+      },
+      {
+        "turn_id": "C01T02",
+        "input": "不录入刚才查询的客户了。客户名称叫北京第四范式科技有限公司，供应商，录入这个客户",
+        "expected": {
+          "text_assertions": {
+            "all": ["北京第四范式科技有限公司"],
+            "any": ["供应商", "确认创建", "已就绪"]
+          },
+          "state_assertion": {
+            "fields": {
+              "accountName": "北京第四范式科技有限公司",
+              "entityType": "供应商"
+            }
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "expected_skills": ["crm_query", "extract-data"],
+      "object_type": "account",
+      "business_success": "pending",
+      "fields": {
+        "accountName": "北京第四范式科技有限公司",
+        "entityType": "供应商"
+      }
+    }
+  },
+  {
+    "id": "CREATEACCOUNT036",
+    "name": "录入客户：客户查重 / 重复数据禁止创建",
+    "metadata": {
+      "scenario": "duplicate_check",
+      "priority": "P0",
+      "difficulty": "medium",
+      "tags": ["account", "multi_turn", "duplicate_check", "negative_case"]
+    },
+    "type": "single",
+    "turns": [
+      {
+        "turn_id": "C01T01",
+        "input": "新建客户，叫中铁十二局集团有限公司陕西第一分公司",
+        "expected": {
+          "text_assertions": {
+            "any": ["中铁十二局集团有限公司陕西第一分公司", "无法使用", "不能是", "更换", "已存在", "数据重复"]
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "object_type": "account",
+      "business_success": false
+    }
+  }
+  
+]

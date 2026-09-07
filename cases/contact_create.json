@@ -1,0 +1,512 @@
+[
+  {
+    "id": "CREATECONTACT001",
+    "name": "录入联系人：正常内容-正向描述01",
+    "metadata": {
+      "scenario": "standard_create",
+      "priority": "P0",
+      "difficulty": "easy",
+      "tags": ["field_extraction", "confirmation_flow", "positive_case"]
+    },
+    "type": "confirmation",
+    "turns": [
+      {
+        "turn_id": "T01",
+        "input": "帮我创建联系人陈鑫，中铁十二局集团的技术部高级工程师，男，手机号13800138000，邮箱chenxin@tianke.com，电话是74783858，默认业务类型，角色是评估者",
+        "expected": {
+          "text_assertions": {
+            "all": ["陈鑫"],
+            "any": ["确认", "信息", "创建"]
+          }
+        }
+      },
+      {
+        "turn_id": "T02",
+        "input": "确认创建",
+        "expected": {
+          "text_assertions": {
+            "any": ["创建成功", "已创建", "完成"]
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "tools_required": ["save_record"],
+      "object_type": "contact",
+      "business_success": true,
+      "fields": {
+        "contactName": "陈鑫",
+        "gender": "男",
+        "mobile": "13800138000",
+        "email": "chenxin@tianke.com",
+        "phone": "74783858",
+        "depart": "技术部",
+        "post": "高级工程师",
+        "contactRole":"评估者"
+      }
+    }
+  },
+  {
+    "id": "CREATECONTACT002",
+    "name": "录入联系人：正常内容-正向描述02",
+    "metadata": {
+      "scenario": "standard_create",
+      "priority": "P0",
+      "difficulty": "easy",
+      "tags": ["field_extraction", "confirmation_flow", "positive_case"]
+    },
+    "type": "confirmation",
+    "turns": [
+      {
+        "turn_id": "T01",
+        "input": "添加个联系人：赵鑫先生，中铁十二局集团的技术部经理，手机是13800138000，电子邮箱是chenxin@tianke.com，电话是74783858，默认业务类型，审批者角色",
+        "expected": {
+          "text_assertions": {
+            "all": ["赵鑫"],
+            "any": ["确认", "创建", "信息"]
+          }
+        }
+      },
+      {
+        "turn_id": "T02",
+        "input": "确认创建",
+        "expected": {
+          "text_assertions": {
+            "any": ["创建成功", "已创建", "完成"]
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "tools_required": ["save_record"],
+      "object_type": "contact",
+      "business_success": true,
+      "fields": {
+        "contactName": "赵鑫",
+        "gender": "男",
+        "mobile": "13800138000",
+        "email": "chenxin@tianke.com",
+        "phone": "74783858",
+        "depart": "技术部",
+        "contactRole": "审批者",
+        "entityType": "默认业务类型",
+        "post": "经理"
+      }
+    }
+  },
+  {
+    "id": "CREATECONTACT003",
+    "name": "录入联系人：正常内容-反向描述01",
+    "metadata": {
+      "scenario": "standard_create",
+      "priority": "P0",
+      "difficulty": "easy",
+      "tags": ["field_extraction", "confirmation_flow", "reverse_description"]
+    },
+    "type": "confirmation",
+    "turns": [
+      {
+        "turn_id": "T01",
+        "input": "刘玲经理，中铁十二局集团市场部，女，手机13903208506，邮箱liuling@tianke.com，办公电话90286789，默认业务类型，角色是审批者，帮我创建这个联系人",
+        "expected": {
+          "text_assertions": {
+            "all": ["刘玲"],
+            "any": ["确认", "创建", "信息"]
+          }
+        }
+      },
+      {
+        "turn_id": "T02",
+        "input": "确认创建",
+        "expected": {
+          "text_assertions": {
+            "any": ["创建成功", "已创建", "完成"]
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "tools_required": ["save_record"],
+      "object_type": "contact",
+      "business_success": true,
+      "fields": {
+        "contactName": "刘玲",
+        "gender": "女",
+        "mobile": "13903208506",
+        "email": "liuling@tianke.com",
+        "phone": "90286789",
+        "depart": "市场部",
+        "post": "经理",
+        "contactRole": "审批者",
+        "entityType": "默认业务类型"
+      }
+    }
+  },
+  {
+    "id": "CREATECONTACT004",
+    "name": "录入联系人：缺必填字段-应阻止创建",
+    "metadata": {
+      "scenario": "missing_required_field",
+      "priority": "P0",
+      "difficulty": "medium",
+      "tags": ["field_extraction", "negative_case", "missing_field"]
+    },
+    "type": "single",
+    "turns": [
+      {
+        "turn_id": "T01",
+        "input": "研发部总监，女士，手机是13903208506，邮箱是liuling@tianke.com，默认业务类型，是中铁十二局集团这个公司的联系人，创建",
+        "expected": {
+          "text_assertions": {
+            "any": ["联系人", "姓名", "请填写", "请提供", "请补充", "必填"]
+          },
+          "state_assertion": {
+            "absent": ["contactName"]
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "tools_forbidden": ["save_record"],
+      "object_type": "contact",
+      "business_success": false,
+      "field_constraints": {
+        "contactName": "absent"
+      }
+    }
+  },
+  {
+    "id": "CREATECONTACT005",
+    "name": "录入联系人：单轮意图切换多次",
+    "metadata": {
+      "scenario": "intent_switch_inline",
+      "priority": "P1",
+      "difficulty": "hard",
+      "tags": ["intent_switch", "field_extraction", "confirmation_flow", "robustness"]
+    },
+    "type": "confirmation",
+    "turns": [
+      {
+        "turn_id": "T01",
+        "input": "新建客户中铁十二局集团，不对客户已存在，改为帮我创建这个客户下的联系人钱鑫，PC移动研发部资深架构师，男，手机是13800138000，邮箱chenxin@tianke.com，电话是74783858，默认业务类型，角色是权力支持者",
+        "expected": {
+          "text_assertions": {
+            "all": ["钱鑫"],
+            "any": ["确认", "创建", "联系人"]
+          }
+        }
+      },
+      {
+        "turn_id": "T02",
+        "input": "确认创建",
+        "expected": {
+          "text_assertions": {
+            "any": ["创建成功", "已创建", "已成功创建", "已保存", "完成"]
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "tools_required": ["save_record"],
+      "object_type": "contact",
+      "business_success": true,
+      "fields": {
+        "contactName": "钱鑫",
+        "gender": "男",
+        "mobile": "13800138000",
+        "email": "chenxin@tianke.com",
+        "phone": "74783858",
+        "depart": "PC移动研发部",
+        "post": "资深架构师",
+        "contactRole": "权力支持者",
+        "entityType": "默认业务类型"
+      }
+    }
+  },
+  {
+    "id": "CREATECONTACT006",
+    "name": "录入联系人：多轮改写-更改已录入的信息",
+    "metadata": {
+      "scenario": "field_update",
+      "priority": "P0",
+      "difficulty": "hard",
+      "tags": ["multi_turn", "context_memory", "field_update"]
+    },
+    "type": "multi_turn",
+    "turns": [
+      {
+        "turn_id": "C01T01",
+        "input": "给客户中铁十二局集团，创建联系人，是技术部总监，默认业务类型",
+        "expected": {
+          "text_assertions": {
+            "all": ["中铁十二局集团", "技术部"],
+            "any": ["请填写", "缺失", "必填", "补充", "姓名", "确认"]
+          }
+        }
+      },
+      {
+        "turn_id": "C01T02",
+        "input": "他叫孙鑫，男士，角色是权力支持者",
+        "expected": {
+          "text_assertions": {
+            "all": ["孙鑫", "中铁十二局集团"]
+          },
+          "state_assertion": {
+            "fields": {"contactName": "孙鑫", "gender": "男"}
+          }
+        }
+      },
+      {
+        "turn_id": "C01T03",
+        "input": "他的手机是13800138000，邮箱chenxin@tianke.com",
+        "expected": {
+          "text_assertions": {
+            "all": ["孙鑫", "13800138000", "chenxin@tianke.com"]
+          }
+        }
+      },
+      {
+        "turn_id": "C01T04",
+        "input": "不对，他是技术部的vp，角色是决策者",
+        "expected": {
+          "text_assertions": {
+            "all": ["孙鑫"],
+            "iany": ["vp", "VP", "副总裁", "副总"]
+          },
+          "state_assertion": {
+            "fields": {"post": "VP"}
+          }
+        }
+      },
+      {
+        "turn_id": "C01T05",
+        "input": "确认创建",
+        "expected": {
+          "text_assertions": {
+            "any": ["创建成功", "已创建", "完成"]
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "tools_required": ["save_record"],
+      "object_type": "contact",
+      "business_success": true,
+      "fields": {
+        "contactName": "孙鑫",
+        "gender": "男",
+        "mobile": "13800138000",
+        "email": "chenxin@tianke.com",
+        "depart": "技术部",
+        "post": "VP",
+        "entityType": "默认业务类型",
+        "contactRole": "决策者"
+      },
+      "require_business_grounding": true
+    }
+  },
+  {
+    "id": "CREATECONTACT007",
+    "name": "录入联系人：多轮改写-删除录入的信息",
+    "metadata": {
+      "scenario": "field_delete",
+      "priority": "P1",
+      "difficulty": "hard",
+      "tags": ["multi_turn", "context_memory", "field_delete"]
+    },
+    "type": "multi_turn",
+    "turns": [
+      {
+        "turn_id": "C01T01",
+        "input": "给我创建默认业务类型的联系人，李先生，中铁十二局集团的",
+        "expected": {
+          "text_assertions": {
+            "all": ["李"],
+            "any": ["请填写", "补充", "确认", "姓名", "全名"]
+          }
+        }
+      },
+      {
+        "turn_id": "C01T02",
+        "input": "他是技术部总监，全名李鑫",
+        "expected": {
+          "text_assertions": {
+            "all": ["李鑫", "中铁十二局集团"]
+          }
+        }
+      },
+      {
+        "turn_id": "C01T03",
+        "input": "他的手机是13800138000，电子邮件是lixin@tianke.com",
+        "expected": {
+          "text_assertions": {
+            "all": ["李鑫", "13800138000", "lixin@tianke.com"]
+          },
+          "state_assertion": {
+            "fields": {"mobile": "13800138000", "email": "lixin@tianke.com"}
+          }
+        }
+      },
+      {
+        "turn_id": "C01T04",
+        "input": "手机号不对，先删除，后续再补充",
+        "expected": {
+          "text_assertions": {
+            "all": ["李鑫", "lixin@tianke.com"]
+          },
+          "state_assertion": {
+            "absent": ["mobile"]
+          }
+        }
+      },
+      {
+        "turn_id": "C01T05",
+        "input": "确认创建",
+        "expected": {
+          "text_assertions": {
+            "any": ["创建成功", "已创建", "完成"]
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "tools_required": ["save_record"],
+      "object_type": "contact",
+      "business_success": true,
+      "fields": {
+        "contactName": "李鑫",
+        "email": "lixin@tianke.com",
+        "gender": "男",
+        "post": "技术部总监",
+        "entityType": "默认业务类型"
+      },
+      "field_constraints": {
+        "mobile": "absent"
+      }
+    }
+  },
+  {
+    "id": "CREATECONTACT008",
+    "name": "录入联系人：多轮-脏话干扰后恢复上下文",
+    "metadata": {
+      "scenario": "context_recovery_after_noise",
+      "priority": "P1",
+      "difficulty": "hard",
+      "tags": ["multi_turn", "context_memory", "robustness", "abnormal_input"]
+    },
+    "type": "multi_turn",
+    "turns": [
+      {
+        "turn_id": "C01T01",
+        "input": "帮我创建联系人周鑫，中铁十二局集团的销售总监，默认业务类型",
+        "expected": {
+          "text_assertions": {
+            "all": ["周鑫"],
+            "any": ["确认", "信息", "创建"]
+          }
+        }
+      },
+      {
+        "turn_id": "C01T02",
+        "input": "TMD",
+        "expected": {
+          "text_assertions": {
+            "any": ["无法", "请提供", "不理解", "继续", "帮助", "抱歉"]
+          }
+        }
+      },
+      {
+        "turn_id": "C01T03",
+        "input": "手机是13800138000，邮箱是zhouxin@tianke.com，确认创建",
+        "expected": {
+          "text_assertions": {
+            "any": ["周鑫", "创建成功", "已创建", "完成", "确认"]
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "tools_required": ["save_record"],
+      "object_type": "contact",
+      "business_success": true,
+      "fields": {
+        "contactName": "周鑫",
+        "mobile": "13800138000",
+        "email": "zhouxin@tianke.com",
+        "post": "销售总监",
+        "entityType": "默认业务类型"
+      }
+    }
+  },
+  {
+    "id": "CREATECONTACT009",
+    "name": "录入联系人：多轮-意图切换(客户→联系人)",
+    "metadata": {
+      "scenario": "intent_switch_customer_to_contact",
+      "priority": "P1",
+      "difficulty": "hard",
+      "tags": ["multi_turn", "intent_switch", "context_memory"]
+    },
+    "type": "multi_turn",
+    "turns": [
+      {
+        "turn_id": "C01T01",
+        "input": "查询客户中铁十二局集团",
+        "expected": {
+          "text_assertions": {
+            "all": ["中铁十二局集团"],
+            "any": [ "已存在", "客户", "查询"]
+          }
+        }
+      },
+      {
+        "turn_id": "C01T02",
+        "input": "不查询客户了，帮我创建默认业务类型的联系人王玲小姐，是中铁十二局集团的联系人",
+        "expected": {
+          "text_assertions": {
+            "all": ["王玲", "中铁十二局集团"]
+          }
+        }
+      },
+      {
+        "turn_id": "C01T03",
+        "input": "她是采购部经理",
+        "expected": {
+          "text_assertions": {
+            "all": ["王玲", "采购部"]
+          }
+        }
+      },
+      {
+        "turn_id": "C01T04",
+        "input": "确认创建",
+        "expected": {
+          "text_assertions": {
+            "any": ["创建成功", "已创建", "完成"]
+          }
+        }
+      }
+    ],
+    "evaluation": {
+      "skill": "extract-data",
+      "expected_skills": ["crm_query", "extract-data"],
+      "tools_required": ["save_record"],
+      "object_type": "contact",
+      "business_success": true,
+      "fields": {
+        "contactName": "王玲",
+        "gender": "女",
+        "post": "采购部经理",
+        "entityType": "默认业务类型"
+      }
+    }
+  }
+]

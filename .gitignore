@@ -1,0 +1,41 @@
+# 凭证文件 - 绝对不要提交
+credentials.yaml
+.env
+.cookie_cache.json
+
+# 报告输出（按需提交）
+reports/*.json
+reports/*.html
+
+# CI / 临时报告目录
+out/
+.tmp*/
+.pytest_cache/
+
+# 录制的原始 SSE（含真实业务数据，脱敏后再手动加入 fixtures/replay/）
+fixtures/recorded/
+*.redactions.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+/_replay_tmp/
+/_tmp*.py

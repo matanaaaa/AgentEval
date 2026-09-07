@@ -1,0 +1,104 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+# CI 连不上内网 CRM，因此只跑「单元测试 + 离线回放冒烟」。
+# 真实环境评测靠本地/内网 runner 手动执行。
+env:
+  AGENTEVAL_DB_CHECK: "0"
+  PYTHONIOENCODING: "utf-8"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Unit tests
+        run: pytest
+
+      - name: Verify BadCase regression fixtures
+        run: python -m regression_set verify --root fixtures/regression
+
+  replay-smoke:
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # 全链路冒烟：SSE 解析 → 五层评测 → 归因 → 性能 → 报告 → 门禁
+      - name: Replay smoke (expect exit 0)
+        run: |
+          python main.py --replay fixtures/replay/demo --case DEMO_PASS \
+            --tag ci-baseline --report-dir out/baseline
+
+      # 门禁必须拦得住退化，否则等于没有门禁
+      - name: Quality gate blocks regression (expect exit 1)
+        run: |
+          set +e
+          python main.py --replay fixtures/replay/demo --case DEMO_ROUTING_FAIL \
+            --tag ci-current --report-dir out/current
+          code=$?
+          set -e
+          if [ "$code" -ne 1 ]; then
+            echo "::error::期望退出码 1（门禁失败），实际为 $code"
+            exit 1
+          fi
+          echo "门禁按预期返回 1"
+
+      # 回归对比：基线全过 vs 当前退化，应返回 2
+      - name: Regression compare detects drop (expect exit 2)
+        run: |
+          set +e
+          python main.py --compare \
+            "$(ls out/baseline/*.json | head -n 1)" \
+            "$(ls out/current/*.json | head -n 1)"
+          code=$?
+          set -e
+          if [ "$code" -ne 2 ]; then
+            echo "::error::期望退出码 2（发现退化），实际为 $code"
+            exit 1
+          fi
+          echo "回归对比按预期返回 2"
+
+      # 真实 BadCase 经人工确认和脱敏后会进入该集合，并按 manifest 期望结果逐条回放。
+      - name: Run BadCase regression set
+        run: python -m regression_set run --root fixtures/regression
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: agenteval-reports
+          path: out/
+          if-no-files-found: warn

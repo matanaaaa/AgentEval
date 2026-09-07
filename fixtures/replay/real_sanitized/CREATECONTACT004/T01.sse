@@ -1,0 +1,477 @@
+event: RUN_STARTED
+data: {"type":"RUN_STARTED","run_id":"8dec0c7e-3a6d-45ab-947e-6691b3712263","thread_id":"workbench-1788520282827-319d9d","conversation_id":"4485204893736520","trace_url":"/cmc1bgrl40005s50849d8l27m/traces/1d8eb8f603c96911b45b70944217966a","current_message_id":4485204893736521,"clientSource":"unknown"}
+
+event: TEXT_MESSAGE_START
+data: {"type":"TEXT_MESSAGE_START","message_id":"da583821ffab_4485204893736521","message_purpose":"reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "da583821ffab_4485204893736521", "delta": "我来", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "da583821ffab_4485204893736521", "delta": "为您", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "da583821ffab_4485204893736521", "delta": "创建这位", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "da583821ffab_4485204893736521", "delta": "联系人。", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "da583821ffab_4485204893736521", "delta": "让我", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "da583821ffab_4485204893736521", "delta": "先确认", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "da583821ffab_4485204893736521", "delta": "一下示例", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "da583821ffab_4485204893736521", "delta": "建工集", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "da583821ffab_4485204893736521", "delta": "团这个客", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "da583821ffab_4485204893736521", "delta": "户的信息。", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "da583821ffab_4485204893736521", "delta": "\n\n让我先", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "da583821ffab_4485204893736521", "delta": "查询一", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "da583821ffab_4485204893736521", "delta": "下示例建", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "da583821ffab_4485204893736521", "delta": "工集团", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "da583821ffab_4485204893736521", "delta": "这个", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "da583821ffab_4485204893736521", "delta": "客户是否", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "da583821ffab_4485204893736521", "delta": "存在。\n\n", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_END
+data: {"type":"TEXT_MESSAGE_END","message_id":"da583821ffab_4485204893736521","message_purpose":"reasoning_narration"}
+
+event: ACTIVITY_SNAPSHOT
+data: {"type":"ACTIVITY_SNAPSHOT","messageId":"a2ui-thinking-step-d92ba270_4485204893736521","activityType":"a2ui-surface","content":{"operations":[{"surfaceUpdate":{"surfaceId":"thinking-step-d92ba270","components":[{"id":"thinking-step-d92ba270","component":{"ThinkingExecutionProcess":{"status":"pending","msg":"正在执行 CRM数据查询","thinkingMsg":"查询示例建工集团的客户信息","processKey":"step-d92ba270","skillName":"query_CRM_data","skillKey":"query_CRM_data","defaultCollapsed":true,"actions":[],"toolCount":1,"children":{"explicitList":["thinking-tool-step-d92ba270-1"]},"label_key":"XdMDNeoAgentV2.tool.query_CRM_data.label"}}},{"id":"thinking-tool-step-d92ba270-1","component":{"ThinkingExecutionProcessTool":{"status":"pending","msg":"正在调用 CRM数据查询","thinkingMsg":"查询示例建工集团的客户信息","toolName":"query_CRM_data","toolLabel":"CRM数据查询","toolRunId":"01a06c1d-cc65-7e53-a31e-41da894da6f7","executionType":"tool","toolLabelKey":"XdMDNeoAgentV2.tool.query_CRM_data.label"}}}]}},{"beginRendering":{"surfaceId":"thinking-step-d92ba270","root":"thinking-step-d92ba270"}}]},"replace":true,"cmpMessageId":"4485204893736521"}
+
+event: ACTIVITY_SNAPSHOT
+data: {"type":"ACTIVITY_SNAPSHOT","messageId":"a2ui-thinking-step-d92ba270_4485204893736521","activityType":"a2ui-surface","content":{"operations":[{"surfaceUpdate":{"surfaceId":"thinking-step-d92ba270","components":[{"id":"thinking-step-d92ba270","component":{"ThinkingExecutionProcess":{"status":"complete","msg":"CRM数据查询 执行完成","thinkingMsg":"查询示例建工集团的客户信息","processKey":"step-d92ba270","skillName":"query_CRM_data","skillKey":"query_CRM_data","defaultCollapsed":true,"actions":[],"toolCount":1,"totalDurationMs":16323,"children":{"explicitList":["thinking-tool-step-d92ba270-1"]},"label_key":"XdMDNeoAgentV2.tool.query_CRM_data.label"}}},{"id":"thinking-tool-step-d92ba270-1","component":{"ThinkingExecutionProcessTool":{"status":"complete","msg":"CRM数据查询 调用完成","thinkingMsg":"查询示例建工集团的客户信息","toolName":"query_CRM_data","toolLabel":"CRM数据查询","toolRunId":"01a06c1d-cc65-7e53-a31e-41da894da6f7","executionType":"tool","durationMs":16323,"slow":true,"toolLabelKey":"XdMDNeoAgentV2.tool.query_CRM_data.label"}}}]}},{"beginRendering":{"surfaceId":"thinking-step-d92ba270","root":"thinking-step-d92ba270"}}]},"replace":true,"cmpMessageId":"4485204893736521"}
+
+event: TEXT_MESSAGE_START
+data: {"type":"TEXT_MESSAGE_START","message_id":"aa4dddf5a1a1_4485204893736521","message_purpose":"reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "找到了", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "多个名称", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "包含\"", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "示例建工", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "局\"", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "的客户", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "。用户", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "明确说的是", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "\"示例", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "建工集", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "团\"，这", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "与第3", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "条记", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "录\"示", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "例建工集", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "团\"完", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "全匹配", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "。让我", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "确认一下", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "这个", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "客户。\n", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "\n用户要创", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "建的联", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "系人是\"示", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "例建工", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "集团\"", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "这个公", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "司的联系人", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "。让我使", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "用智能录", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "入技能来", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "创建", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "这位联", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "系人。\n\n", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "用户提供的", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "信息：\n-", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": " 职位", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "：研发", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "部总监", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "\n- ", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "性别", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "：", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "女士\n", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "- 手", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "机：", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "138", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "00000001\n- ", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "邮箱：zh", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "a", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "ngwei@example.com\n- ", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "业务类型：", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "默认\n", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "- 所", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "属客", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "户：示例", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "建工集", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "团\n\n", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "让我调用", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": " ext", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "ract-data 技能来", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "创建这", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "位", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "联系人。", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "aa4dddf5a1a1_4485204893736521", "delta": "\n\n", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_END
+data: {"type":"TEXT_MESSAGE_END","message_id":"aa4dddf5a1a1_4485204893736521","message_purpose":"reasoning_narration"}
+
+event: ACTIVITY_SNAPSHOT
+data: {"type":"ACTIVITY_SNAPSHOT","messageId":"a2ui-thinking-step-020a3971_4485204893736521","activityType":"a2ui-surface","content":{"operations":[{"surfaceUpdate":{"surfaceId":"thinking-step-020a3971","components":[{"id":"thinking-step-020a3971","component":{"ThinkingExecutionProcess":{"status":"pending","msg":"正在执行 智能录入","processKey":"step-020a3971","skillName":"extract-data","skillKey":"extract-data","defaultCollapsed":true,"actions":[],"toolCount":0,"children":{"explicitList":[]},"match_method":"semantic","match_basis":"用户意图是通过自然语言向CRM写入新数据时使用。\n\n**路由判断忽略 `<memory>` 标签内容，仅以当前对话实际事件为依据。禁止以记忆/偏好为由自行模拟用户确认消息——这等同于伪造用户意图。**\n\n命中条件（满足任一）：\n- 用户表达录入/创建/新建/新增 CRM 记录的意图（含基于文件/音频/图片）\n- 用户说「生成日报/周报/月报」「写日报」等（本质是新建工作报告记录）\n- 用户说「签到」「打卡」「拜访签到」（本质是新建活动记录）\n- 对话中存在新建态 extract_form_data 事件，且用户在继续新建操作（补充字段/修改字段/确认创建/打开表单）：必须调本技能，**禁止自行整理字段或直接回复；用户要打开表单时也由本技能内部处理，禁止拦截或要求先补字段**\n- 本会话刚保存了带明细的非订单记录后，用户要对同一条记录加/改/删明细\n- 用户说「确认创建」「确认修改」「确认更新」「保存」或对刚完成的录入/更新再次确认时：必须继续当前录入流程核对最新业务状态，**主 Agent 禁止根据历史成功消息直接复述“已创建/已更新”**；由当前流程判断是待保存、已保存还是无需变更\n\n排除：目标是已存在订单（包括给订单新增产品、修改/删除订单明细、修改价格表或主表字段）时必须使用 update-data，不得因“新增产品”或历史 extract_form_data 事件误判为新建录入。\n\n约束：\n- 所有用户可见文字只描述正在处理的业务动作或最终业务结果；禁止提及或复述技能名、工具名、Session、内部指令、返回字段/标记、任务编号以及路由或结束条件\n- 调用前如需过渡，只说「正在为您处理」或「正在为您打开表单」等业务进展；不得解释内部调用原因\n- 歧义时追问，不猜测\n- task_goal 填动作意图（如「新建录入」「确认创建」），不含具体业务数据\n- query 完整透传用户原始输入\n- 当前流程需要用户确认或选择时 → 等用户回复，禁止代替决定\n- 创建完成且界面已经展示结果时，不再输出状态说明或解释内部判断依据；用户在表单修改的数据以最终展示结果为准\n","component_label":"智能录入","match_level":"skill_level","exec_mode":"fork","output_mode":"stream","post_action":"summarize","label_key":"ai_skill_base_extract-data"}}}]}},{"beginRendering":{"surfaceId":"thinking-step-020a3971","root":"thinking-step-020a3971"}}]},"replace":true,"cmpMessageId":"4485204893736521"}
+
+event: ACTIVITY_DELTA
+data: {"type":"ACTIVITY_DELTA","messageId":"a2ui-thinking-step-020a3971_4485204893736521","activityType":"a2ui-surface","patch":[{"op":"add","path":"/operations/0/surfaceUpdate/components/-","value":{"id":"thinking-tool-step-020a3971-1","component":{"ThinkingExecutionProcessTool":{"status":"pending","msg":"正在调用 智能录入","toolName":"extract-data","toolLabel":"智能录入","toolRunId":"skill-extract-data-4bd3ff43","executionType":"skill","skillApiKey":"extract-data","agentApiKey":"extract-data","subTaskTraceId":"default-extract-data-eaa3a3df","parentRunId":"default","toolLabelKey":"ai_skill_base_extract-data"}}}},{"op":"add","path":"/operations/0/surfaceUpdate/components/0/component/ThinkingExecutionProcess/children/explicitList/-","value":"thinking-tool-step-020a3971-1"},{"op":"replace","path":"/operations/0/surfaceUpdate/components/0/component/ThinkingExecutionProcess/toolCount","value":1}],"cmpMessageId":"4485204893736521"}
+
+event: ACTIVITY_DELTA
+data: {"type":"ACTIVITY_DELTA","messageId":"a2ui-thinking-step-020a3971_4485204893736521","activityType":"a2ui-surface","patch":[{"op":"add","path":"/operations/0/surfaceUpdate/components/-","value":{"id":"thinking-tool-step-020a3971-2","component":{"ThinkingExecutionProcessTool":{"status":"pending","msg":"正在调用 识别实体","toolName":"resolve_entity","toolLabel":"识别实体","toolRunId":"01a06c1e-22d6-7142-8efd-7782268e42a6","executionType":"tool","toolLabelKey":"XdMDNeoAgentV2.tool.resolve_entity.label"}}}},{"op":"add","path":"/operations/0/surfaceUpdate/components/0/component/ThinkingExecutionProcess/children/explicitList/-","value":"thinking-tool-step-020a3971-2"},{"op":"replace","path":"/operations/0/surfaceUpdate/components/0/component/ThinkingExecutionProcess/toolCount","value":2}],"cmpMessageId":"4485204893736521"}
+
+event: ACTIVITY_DELTA
+data: {"type":"ACTIVITY_DELTA","messageId":"a2ui-thinking-step-020a3971_4485204893736521","activityType":"a2ui-surface","patch":[{"op":"replace","path":"/operations/0/surfaceUpdate/components/2","value":{"id":"thinking-tool-step-020a3971-2","component":{"ThinkingExecutionProcessTool":{"status":"complete","msg":"识别实体 调用完成","toolName":"resolve_entity","toolLabel":"识别实体","toolRunId":"01a06c1e-22d6-7142-8efd-7782268e42a6","executionType":"tool","durationMs":4520,"slow":false,"toolLabelKey":"XdMDNeoAgentV2.tool.resolve_entity.label","retried":false}}}}],"cmpMessageId":"4485204893736521"}
+
+event: ACTIVITY_DELTA
+data: {"type":"ACTIVITY_DELTA","messageId":"a2ui-thinking-step-020a3971_4485204893736521","activityType":"a2ui-surface","patch":[{"op":"add","path":"/operations/0/surfaceUpdate/components/-","value":{"id":"thinking-tool-step-020a3971-3","component":{"ThinkingExecutionProcessTool":{"status":"pending","msg":"正在调用 获取字段","toolName":"get_field_schema","toolLabel":"获取字段","toolRunId":"01a06c1e-347f-7813-b4dd-be5aa98b642e","executionType":"tool","toolLabelKey":"XdMDNeoAgentV2.tool.get_field_schema.label"}}}},{"op":"add","path":"/operations/0/surfaceUpdate/components/0/component/ThinkingExecutionProcess/children/explicitList/-","value":"thinking-tool-step-020a3971-3"},{"op":"replace","path":"/operations/0/surfaceUpdate/components/0/component/ThinkingExecutionProcess/toolCount","value":3}],"cmpMessageId":"4485204893736521"}
+
+event: ACTIVITY_DELTA
+data: {"type":"ACTIVITY_DELTA","messageId":"a2ui-thinking-step-020a3971_4485204893736521","activityType":"a2ui-surface","patch":[{"op":"replace","path":"/operations/0/surfaceUpdate/components/3","value":{"id":"thinking-tool-step-020a3971-3","component":{"ThinkingExecutionProcessTool":{"status":"complete","msg":"获取字段 调用完成","toolName":"get_field_schema","toolLabel":"获取字段","toolRunId":"01a06c1e-347f-7813-b4dd-be5aa98b642e","executionType":"tool","durationMs":6090,"slow":false,"toolLabelKey":"XdMDNeoAgentV2.tool.get_field_schema.label","retried":false}}}}],"cmpMessageId":"4485204893736521"}
+
+event: ACTIVITY_DELTA
+data: {"type":"ACTIVITY_DELTA","messageId":"a2ui-thinking-step-020a3971_4485204893736521","activityType":"a2ui-surface","patch":[{"op":"add","path":"/operations/0/surfaceUpdate/components/-","value":{"id":"thinking-tool-step-020a3971-4","component":{"ThinkingExecutionProcessTool":{"status":"pending","msg":"正在调用 校验录入","toolName":"validate_extract","toolLabel":"校验录入","toolRunId":"01a06c1e-4c48-7e00-93e0-d01aac7b750b","executionType":"tool","toolLabelKey":"XdMDNeoAgentV2.tool.validate_extract.label"}}}},{"op":"add","path":"/operations/0/surfaceUpdate/components/0/component/ThinkingExecutionProcess/children/explicitList/-","value":"thinking-tool-step-020a3971-4"},{"op":"replace","path":"/operations/0/surfaceUpdate/components/0/component/ThinkingExecutionProcess/toolCount","value":4}],"cmpMessageId":"4485204893736521"}
+
+event: ACTIVITY_SNAPSHOT
+data: {"type":"ACTIVITY_SNAPSHOT","messageId":"a2ui-4485204893736521-8dec0c7e-3a6d-45ab-947e-6691b3712263-1","activityType":"a2ui-surface","content":{"operations":[{"surfaceUpdate":{"surfaceId":"chat-inline-8dec0c7e-3a6d-45ab-947e-6691b3712263-0","components":[{"id":"fallback-extract_form_data-8dec0c7e-3a6d-45ab-947e-6691b3712263","component":{"FallbackDataViewer":{"messageId":"a2ui-4485204893736521-8dec0c7e-3a6d-45ab-947e-6691b3712263-1","dataKey":"extract_form_data","data":{"card_instance_id":"580f8de86d554e50bfa6728fc365b7d7","__msg_created_at":1788520323074,"task_id":"ext_18005db1304b","object_apikey":"contact","entity_type_apikey":"defaultBusiType","isCreated":false,"mode":"create","isUpdated":false,"record_id":null,"diff_data":null,"all_fields_valid":false,"round_count":1,"interrupt":false,"entityInfo":{"apikey":"contact","label":"联系人","labelKey":"XdMDObj.contact"},"extracted":[{"apikey":"accountId","name":"公司名称","nameKey":"XdMDItm.contact.accountId","label":"示例建工集团","labelKey":null,"value":4400000000000001,"type":"relation","isObject":true,"extData":{"label":"示例建工集团","value":4400000000000001,"apiKey":null,"labelKey":null}},{"apikey":"post","name":"职务","nameKey":"XdMDItm.contact.post","label":"研发部总监","labelKey":null,"value":"研发部总监","type":"text","isObject":false,"extData":{}},{"apikey":"gender","name":"性别","nameKey":"XdMDItm.contact.gender","label":"女","labelKey":"XdMDPickOptn.contact.gender.2","value":2,"type":"option","isObject":false,"extData":{}},{"apikey":"mobile","name":"手机","nameKey":"XdMDItm.contact.mobile","label":"13800000001","labelKey":null,"value":"13800000001","type":"text","isObject":false,"extData":{}},{"apikey":"email","name":"电子邮件","nameKey":"XdMDItm.contact.email","label":"zhangwei@example.com","labelKey":null,"value":"zhangwei@example.com","type":"text","isObject":false,"extData":{}},{"apikey":"entityType","name":"联系人类型","nameKey":"XdMDItm.contact.entityType","label":"默认业务类型","labelKey":null,"value":-11010000200001,"type":"relation","isObject":true,"extData":{"label":"默认业务类型","value":-11010000200001,"apiKey":"defaultBusiType","labelKey":null}}],"required":[{"fieldApiKey":"contactName","errorType":"REQUIRED_NOT_FILLED","message":"请填写","apikey":"contactName","name":"姓名","nameKey":"XdMDItm.contact.contactName","label":"请填写","type":"text","itemType":1}],"modified":[],"systemErrors":[],"warningErrors":[],"pending_required":["contactName"],"detail_fields":[],"pickerFilterData":null,"fileFields":{},"cmpVariant":"normal"}}}}]}},{"beginRendering":{"surfaceId":"chat-inline-8dec0c7e-3a6d-45ab-947e-6691b3712263-0","root":"fallback-extract_form_data-8dec0c7e-3a6d-45ab-947e-6691b3712263"}}]},"replace":false,"cmpMessageId":"4485204893736521"}
+
+event: ACTIVITY_DELTA
+data: {"type":"ACTIVITY_DELTA","messageId":"a2ui-thinking-step-020a3971_4485204893736521","activityType":"a2ui-surface","patch":[{"op":"replace","path":"/operations/0/surfaceUpdate/components/4","value":{"id":"thinking-tool-step-020a3971-4","component":{"ThinkingExecutionProcessTool":{"status":"complete","msg":"校验录入 调用完成","toolName":"validate_extract","toolLabel":"校验录入","toolRunId":"01a06c1e-4c48-7e00-93e0-d01aac7b750b","executionType":"tool","durationMs":5597,"slow":false,"toolLabelKey":"XdMDNeoAgentV2.tool.validate_extract.label","retried":false}}}}],"cmpMessageId":"4485204893736521"}
+
+event: ACTIVITY_DELTA
+data: {"type":"ACTIVITY_DELTA","messageId":"a2ui-thinking-step-020a3971_4485204893736521","activityType":"a2ui-surface","patch":[{"op":"add","path":"/operations/0/surfaceUpdate/components/-","value":{"id":"thinking-tool-step-020a3971-5","component":{"ThinkingExecutionProcessTool":{"status":"pending","msg":"正在调用 校验录入","toolName":"validate_extract","toolLabel":"校验录入","toolRunId":"01a06c1e-6226-7651-abb7-a03cbaab484b","executionType":"tool","toolLabelKey":"XdMDNeoAgentV2.tool.validate_extract.label"}}}},{"op":"add","path":"/operations/0/surfaceUpdate/components/0/component/ThinkingExecutionProcess/children/explicitList/-","value":"thinking-tool-step-020a3971-5"},{"op":"replace","path":"/operations/0/surfaceUpdate/components/0/component/ThinkingExecutionProcess/toolCount","value":5}],"cmpMessageId":"4485204893736521"}
+
+event: ACTIVITY_SNAPSHOT
+data: {"type":"ACTIVITY_SNAPSHOT","messageId":"a2ui-4485204893736521-8dec0c7e-3a6d-45ab-947e-6691b3712263-2","activityType":"a2ui-surface","content":{"operations":[{"surfaceUpdate":{"surfaceId":"chat-inline-8dec0c7e-3a6d-45ab-947e-6691b3712263-1","components":[{"id":"fallback-extract_form_data-8dec0c7e-3a6d-45ab-947e-6691b3712263","component":{"FallbackDataViewer":{"messageId":"a2ui-4485204893736521-8dec0c7e-3a6d-45ab-947e-6691b3712263-2","dataKey":"extract_form_data","data":{"card_instance_id":"446abfd0184442ab957f6a3df30dc593","__msg_created_at":1788520328289,"task_id":"ext_18005db1304b","object_apikey":"contact","entity_type_apikey":"defaultBusiType","isCreated":false,"mode":"create","isUpdated":false,"record_id":null,"diff_data":null,"all_fields_valid":false,"round_count":2,"interrupt":false,"entityInfo":{"apikey":"contact","label":"联系人","labelKey":"XdMDObj.contact"},"extracted":[{"apikey":"accountId","name":"公司名称","nameKey":"XdMDItm.contact.accountId","label":"示例建工集团","labelKey":null,"value":4400000000000001,"type":"relation","isObject":true,"extData":{"label":"示例建工集团","value":4400000000000001,"apiKey":null,"labelKey":null}},{"apikey":"post","name":"职务","nameKey":"XdMDItm.contact.post","label":"研发部总监","labelKey":null,"value":"研发部总监","type":"text","isObject":false,"extData":{}},{"apikey":"gender","name":"性别","nameKey":"XdMDItm.contact.gender","label":"女","labelKey":"XdMDPickOptn.contact.gender.2","value":2,"type":"option","isObject":false,"extData":{}},{"apikey":"mobile","name":"手机","nameKey":"XdMDItm.contact.mobile","label":"13800000001","labelKey":null,"value":"13800000001","type":"text","isObject":false,"extData":{}},{"apikey":"email","name":"电子邮件","nameKey":"XdMDItm.contact.email","label":"zhangwei@example.com","labelKey":null,"value":"zhangwei@example.com","type":"text","isObject":false,"extData":{}},{"apikey":"entityType","name":"联系人类型","nameKey":"XdMDItm.contact.entityType","label":"默认业务类型","labelKey":null,"value":-11010000200001,"type":"relation","isObject":true,"extData":{"label":"默认业务类型","value":-11010000200001,"apiKey":"defaultBusiType","labelKey":null}}],"required":[{"fieldApiKey":"contactName","errorType":"REQUIRED_NOT_FILLED","message":"请填写","apikey":"contactName","name":"姓名","nameKey":"XdMDItm.contact.contactName","label":"请填写","type":"text","itemType":1}],"modified":[],"systemErrors":[],"warningErrors":[],"pending_required":["contactName"],"detail_fields":[],"pickerFilterData":null,"fileFields":{},"cmpVariant":"normal"}}}}]}},{"beginRendering":{"surfaceId":"chat-inline-8dec0c7e-3a6d-45ab-947e-6691b3712263-1","root":"fallback-extract_form_data-8dec0c7e-3a6d-45ab-947e-6691b3712263"}}]},"replace":false,"cmpMessageId":"4485204893736521"}
+
+event: ACTIVITY_DELTA
+data: {"type":"ACTIVITY_DELTA","messageId":"a2ui-thinking-step-020a3971_4485204893736521","activityType":"a2ui-surface","patch":[{"op":"replace","path":"/operations/0/surfaceUpdate/components/5","value":{"id":"thinking-tool-step-020a3971-5","component":{"ThinkingExecutionProcessTool":{"status":"complete","msg":"校验录入 调用完成","toolName":"validate_extract","toolLabel":"校验录入","toolRunId":"01a06c1e-6226-7651-abb7-a03cbaab484b","executionType":"tool","durationMs":4779,"slow":false,"toolLabelKey":"XdMDNeoAgentV2.tool.validate_extract.label","retried":false}}}}],"cmpMessageId":"4485204893736521"}
+
+event: ACTIVITY_DELTA
+data: {"type":"ACTIVITY_DELTA","messageId":"a2ui-thinking-step-020a3971_4485204893736521","activityType":"a2ui-surface","patch":[{"op":"replace","path":"/operations/0/surfaceUpdate/components/1","value":{"id":"thinking-tool-step-020a3971-1","component":{"ThinkingExecutionProcessTool":{"status":"complete","msg":"智能录入 调用完成","toolName":"extract-data","toolLabel":"智能录入","toolRunId":"skill-extract-data-4bd3ff43","executionType":"skill","durationMs":23466,"slow":true,"skillApiKey":"extract-data","agentApiKey":"extract-data","subTaskTraceId":"default-extract-data-eaa3a3df","parentRunId":"default","toolLabelKey":"ai_skill_base_extract-data","retried":false}}}}],"cmpMessageId":"4485204893736521"}
+
+event: ACTIVITY_SNAPSHOT
+data: {"type":"ACTIVITY_SNAPSHOT","messageId":"a2ui-thinking-step-020a3971_4485204893736521","activityType":"a2ui-surface","content":{"operations":[{"surfaceUpdate":{"surfaceId":"thinking-step-020a3971","components":[{"id":"thinking-step-020a3971","component":{"ThinkingExecutionProcess":{"status":"complete","msg":"智能录入 执行完成","processKey":"step-020a3971","skillName":"extract-data","skillKey":"extract-data","defaultCollapsed":true,"actions":[],"toolCount":5,"totalDurationMs":23468,"children":{"explicitList":["thinking-tool-step-020a3971-1","thinking-tool-step-020a3971-2","thinking-tool-step-020a3971-3","thinking-tool-step-020a3971-4","thinking-tool-step-020a3971-5"]}}}},{"id":"thinking-tool-step-020a3971-1","component":{"ThinkingExecutionProcessTool":{"status":"complete","msg":"智能录入 调用完成","toolName":"extract-data","toolLabel":"智能录入","toolRunId":"skill-extract-data-4bd3ff43","executionType":"skill","durationMs":23466,"slow":true,"skillApiKey":"extract-data","agentApiKey":"extract-data","subTaskTraceId":"default-extract-data-eaa3a3df","parentRunId":"default","toolLabelKey":"ai_skill_base_extract-data","retried":false}}},{"id":"thinking-tool-step-020a3971-2","component":{"ThinkingExecutionProcessTool":{"status":"complete","msg":"识别实体 调用完成","toolName":"resolve_entity","toolLabel":"识别实体","toolRunId":"01a06c1e-22d6-7142-8efd-7782268e42a6","executionType":"tool","durationMs":4520,"slow":false,"toolLabelKey":"XdMDNeoAgentV2.tool.resolve_entity.label","retried":false}}},{"id":"thinking-tool-step-020a3971-3","component":{"ThinkingExecutionProcessTool":{"status":"complete","msg":"获取字段 调用完成","toolName":"get_field_schema","toolLabel":"获取字段","toolRunId":"01a06c1e-347f-7813-b4dd-be5aa98b642e","executionType":"tool","durationMs":6090,"slow":false,"toolLabelKey":"XdMDNeoAgentV2.tool.get_field_schema.label","retried":false}}},{"id":"thinking-tool-step-020a3971-4","component":{"ThinkingExecutionProcessTool":{"status":"complete","msg":"校验录入 调用完成","toolName":"validate_extract","toolLabel":"校验录入","toolRunId":"01a06c1e-4c48-7e00-93e0-d01aac7b750b","executionType":"tool","durationMs":5597,"slow":false,"toolLabelKey":"XdMDNeoAgentV2.tool.validate_extract.label","retried":false}}},{"id":"thinking-tool-step-020a3971-5","component":{"ThinkingExecutionProcessTool":{"status":"complete","msg":"校验录入 调用完成","toolName":"validate_extract","toolLabel":"校验录入","toolRunId":"01a06c1e-6226-7651-abb7-a03cbaab484b","executionType":"tool","durationMs":4779,"slow":false,"toolLabelKey":"XdMDNeoAgentV2.tool.validate_extract.label","retried":false}}}]}},{"beginRendering":{"surfaceId":"thinking-step-020a3971","root":"thinking-step-020a3971"}}]},"replace":true,"cmpMessageId":"4485204893736521"}
+
+event: TEXT_MESSAGE_START
+data: {"type":"TEXT_MESSAGE_START","message_id":"cd0851b2c2c7_4485204893736521","message_purpose":"reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "我已", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "为您录入", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "这位", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "联系人的", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "大部分信息", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "，但", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "还缺少", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "必", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "填的", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "**姓名", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "**字段", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "。\n\n目前", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "已经确认", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "的信息如下", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "：\n", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "- **", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "公司名称", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "**：", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "示例建工", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "集团\n", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "- ", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "**职务*", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "*：研", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "发部总", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "监\n-", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": " **性", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "别**：", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "女\n", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "- ", "message_purpose": "reasoning_narration"}
+
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "**手机*", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "*：1", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "380000", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "0001\n", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "- ", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "**邮箱*", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "*：z", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "hangwei", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "@e", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "xampl", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "e.com", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "\n- *", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "*联系人类", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "型**", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "：默", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "认业务类", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "型\n\n请", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "问这位联", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "系人的*", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "*姓名*", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "*是什么", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "？补充", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "后即可完", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "成创", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_CONTENT
+data: {"type": "TEXT_MESSAGE_CONTENT", "message_id": "cd0851b2c2c7_4485204893736521", "delta": "建。", "message_purpose": "reasoning_narration"}
+
+event: TEXT_MESSAGE_END
+data: {"type":"TEXT_MESSAGE_END","message_id":"cd0851b2c2c7_4485204893736521","message_purpose":"reasoning_narration"}
+
+event: RUN_FINISHED
+data: {"type":"RUN_FINISHED","run_id":"8dec0c7e-3a6d-45ab-947e-6691b3712263","thread_id":"workbench-1788520282827-319d9d","conversation_id":"4485204893736520","cost_credits":null,"message_cost_credits":26.848944,"message_cost_credits_at":1788520333109}
